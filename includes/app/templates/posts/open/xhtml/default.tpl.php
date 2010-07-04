@@ -14,7 +14,11 @@
 <div id='content' class='box'>
 <?php echo $this->post['content']?>
 </div>
-
+<?php if ($this->user->isAdmin()):?>
+<p>
+    <a href='posts/edit/<?php echo $this->post['id'];?>'>Edit</a>
+</p>
+<?php endif;?>
 <h2>Comments</h2>
 <?php if ($this->comments):?>
 <ol>

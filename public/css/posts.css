@@ -25,7 +25,7 @@ small{text-align:right;display:block;}
 
 #info{margin:15px;overflow:auto;}
 
-#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 10px; width:265px;}
+#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 10px; width:270px;}
 
 #new-comment{width:500px; margin:0 auto;position:relative;}
 #new-comment legend span{display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
