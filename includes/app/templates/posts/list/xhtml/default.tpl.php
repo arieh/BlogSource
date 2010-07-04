@@ -5,7 +5,7 @@
 <?php foreach ($this->posts as $post):?>
     <li class='post box'>
         <h2><a href='posts/open/<?php echo $post['name'];?>'><?php echo $post['title']?></a></h2>
-        <blockquote><?php echo $post['summary']?></blockquote>
+        <blockquote cite='posts/open/<?php echo $post['name'];?>'><?php echo $post['summary']?></blockquote>
         <small>Comments: <?php echo $post['comments']?></small>
     </li>
 <?php endforeach;?>
