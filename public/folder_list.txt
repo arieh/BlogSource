@@ -1,0 +1,11 @@
+../includes/lib/
+../includes/lib/userAtuh/
+../includes/lib/models/
+../includes/lib/controllers/
+../includes/lib/views/
+../includes/lib/DBAccess/
+../includes/lib/data_access/mysql/
+../includes/app/
+../includes/app/models/
+../includes/app/controllers/
+../includes/app/factories/

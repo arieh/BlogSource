@@ -1,0 +1,108 @@
+body{
+	background:#9FC5ED;
+}
+a,a:visited{text-decoration:none;color:#00f}
+a:hover{text-decoration:underline;}
+label{display:block;}
+p{margin-bottom:15px;}
+small {color:#4E4E4E}
+.clear{clear:both;}
+
+#header{
+	width:960px;
+	margin:0 auto;
+	position:relative;
+	height:280px;
+	z-index:30;
+}
+
+#logo a{
+	position:absolute;
+	left:25px;
+	color:#034B98;
+	font-size:8em;
+	text-shadow: -7px 5px 22px #4F4F48;
+	display:block;
+}
+
+#logo a:hover{text-decoration:none}
+
+#logo span{
+	font-size:0.6em;
+}
+
+dl{margin:10px;}
+input.submit{margin-right:10px;}
+
+#main{
+	width:940px;
+	margin:0 auto;
+	min-height:500px;
+	background:#eee;
+	border:5px solid #fff;
+	position:relative;
+	padding:20px 10px;
+}
+.box{
+    background:#fff;
+    padding:20px;
+    border:3px solid #BAB6B6;
+}
+
+h1,h2,h3,h4{font-weight:bold; font-family:Helvetica,Arial,sans-serif}
+
+h1{
+	font-size: 3em;
+	margin-bottom:25px;
+	text-align:center;
+	color:#2583E6;
+}
+h1 a, h1 a:visited{color:#2583E6;}
+#logo h1{font-size:1em;}
+h2{
+	font-size:1.5em;
+	margin-bottom:10px;
+}
+
+.dark{
+    background:#e5e5e5;	
+}
+
+#subs{text-align:center;}
+
+#footer{width:auto;background:url(../images/grass2.gif); height:40px; margin-top:30px; bottom:0}
+
+
+#sky{
+	width:100%;
+	height:250px;
+	position:absolute;
+	top:50px;
+	padding:0; margin:0;
+}
+
+#clouds_l{
+	width:100%;
+	height:115px;
+	background:url(../images/cloud.gif) repeat-x 0 0;
+	z-index:50;
+	top:85px;
+	position:absolute;
+}
+
+#clouds_s{
+	width:100%;
+	height:58px;
+	background:url(../images/cloud.gif) repeat-x 0 bottom;
+	z-index:10;
+	position:absolute;
+}
+
+.posts, #paging {width:620px;float:left;}
+
+.post h3,#info h3{float:left;margin-right:10px;clear:right;font-size:0.8em;}
+.tags {float:left; font-size:0.8em;}
+
+#tag-list {float:right; width:220px;}
+#tag-list li{margin-bottom:10px;}
+#paging {padding:0; text-align:center; width:614px;}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/204/branches/forum-example/classes/library/Savant3
+END
+Error.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/179/branches/forum-example/classes/library/Savant3/Error.php
+END
+Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/179/branches/forum-example/classes/library/Savant3/Filter.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/179/branches/forum-example/classes/library/Savant3/Exception.php
+END
+Plugin.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/179/branches/forum-example/classes/library/Savant3/Plugin.php
+END
