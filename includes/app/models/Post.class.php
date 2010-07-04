@@ -80,7 +80,7 @@ class Post extends AbstractModel{
                     comments.name as `c_name`,
                     comments.content as `c_content`,
                     comments.email as `c_email`,
-                    comments.created as `c_created`,
+                    UNIX_TIMESTAMP(comments.created) as `c_created`,
                     tags.name as `t_name`,
                     tags.id as `t_id`
                 FROM
