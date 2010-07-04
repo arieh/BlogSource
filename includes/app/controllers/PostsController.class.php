@@ -46,7 +46,6 @@ class PostsController extends AbstractSubController{
             if ($post) $this->view->assign('post',$post);
             else $this->view->assign('post',false);
         }else $this->goHome();
-        
     }
     
     protected function create(){

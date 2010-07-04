@@ -18,3 +18,4 @@
 <?php endforeach;?>
 </ol>
 </div>
+<?php if ($this->user->isAdmin()):?><p class='clear'><a href='posts/new'>New Post</a></p><?php endif;?>

@@ -23,6 +23,15 @@ foreach($this->js as $name){
         <script type='text/javascript' src='<?php echo $this->base_path . "js/$name.js";?>'></script>
     <?php endforeach;?>
 <?php endif;?>
+<?php if (isset($this->tinymce) && $this->tinymce): ?>
+   <script type='text/javascript' src='js/ckeditor/ckeditor.js'></script>
+   <script type='text/javascript'>
+ //<![CDATA[
+   CKEDITOR.replace( 'p_content' );
+ //]]>
+   </script>
+<?php endif;?>
+
 <script type='text/javascript'>
 //<![CDATA[
    <?php echo "var base_path = '{$this->base_path}';\n"?>
