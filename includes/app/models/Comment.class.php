@@ -14,9 +14,9 @@ class Comment extends AbstractModel{
     
     protected function create(){
         $post = $this->getOption('id');
-        $title = $this->getOption('title');
-        $name = $this->getOption('name');
-        $email = $this->getOption('email');
+        $title = trim($this->getOption('title'));
+        $name = trim($this->getOption('name'));
+        $email = trim($this->getOption('email'));
         $content = $this->getOption('content');
         
         

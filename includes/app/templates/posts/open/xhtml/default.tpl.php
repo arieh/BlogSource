@@ -31,7 +31,7 @@
         <article class='comment box' id='cmt<?php echo $comment['id']?>'>
             <header>
                 <?php
-                    $hash = md5(strtolower(ltrim($comment['email'])));
+                    $hash = md5(strtolower(trim($comment['email'])));
                 ?>
                 <img src="http://www.gravatar.com/avatar/<?php echo $hash?>?d=identicon&amp;=70" height='70' width='70' alt='gravatar image' />
                 <h1><?php echo $comment['title'];?></h1>
