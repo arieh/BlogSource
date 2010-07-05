@@ -103,6 +103,8 @@ class PostsController extends AbstractSubController{
         $this->css[] = 'posts';
         $this->css[]='highlighter';
         $this->js[]='highlighter';
+        $this->js[]='validator';
+        $this->js[]='posts';
         
         if ($post['js']) $this->js[]=str_replace('.js','',$post['js']);
         if ($post['css']) $this->css[]=str_replace('.css','',$post['css']);

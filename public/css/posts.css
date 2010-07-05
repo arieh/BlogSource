@@ -30,8 +30,10 @@ small{text-align:right;display:block;}
 
 #new-comment{width:500px; margin:0 auto;position:relative;}
 #new-comment legend span{margin-bottom:20px;display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
-#new-comment input, #new-comment textarea{width:460px; display:block;margin:0 auto;}
+#new-comment input, #new-comment textarea,#new-comment .validation-advice{width:460px; display:block;margin:0 auto;}
 #new-comment textarea{height:200px;}
 #new-comment input.submit{margin:10px}
 #new-comment small {text-align:left;}
 #new-comment label {margin-top:5px; font-size:0.9em}
+
+.validation-advice{font-weight:bold; color:red;font-size:0.9em;}

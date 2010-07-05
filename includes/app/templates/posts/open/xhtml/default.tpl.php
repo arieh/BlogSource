@@ -51,13 +51,13 @@
     <fieldset>
         <legend><span>New Comment</span></legend>
         <label for='c_title'>Title:</label>
-        <input type='text' name='comment[title]' id='c_title' />
+        <input type='text' name='comment[title]' id='c_title' class='required' />
         
         <label for='c_name'>Name:</label>
-        <input type='text' name='comment[name]' id='c_name' />
+        <input type='text' name='comment[name]' id='c_name' class='required' />
         
         <label for='c_email'>Email: <small>will not be published</small></label>
-        <input type='text' name='comment[email]' id='c_email' />
+        <input type='text' name='comment[email]' id='c_email' class='required validate-email' />
         
         <label for='c_content'>Content:</label>
         <textarea id='c_content' name='comment[content]' rows='20'  cols='60'></textarea>
