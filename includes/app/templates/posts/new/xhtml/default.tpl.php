@@ -7,7 +7,7 @@ if ($this->post instanceof Post){
         ,'tags'=>$this->post->getOptions('tags')
     );
     $tags = $post->getOptions('tags');
-}elseif (isset($this->post)){
+}elseif (isset($this->post) && $this->post){
     $post = $this->post;
     $tags = $this->tags;
 }
@@ -21,11 +21,11 @@ else $post = false;
     }
     else{
         echo "New Post";
-        $action = 'posts/new';
+        $action = 'posts/create';
     }
 ?></h1>
 </header>
-<form action='<?php echo $action;?>' method='post'>
+<form action='<?php echo $action;?>' method='post' enctype="multipart/form-data">
 <fieldset>
     <label for='title'>Title:</label>
     <input type='text' name='post[title]' id='title' <?php
@@ -36,6 +36,12 @@ else $post = false;
     <input type='text' name='post[summary]' id='summary' <?php
         if ($post) echo "value = '{$post['summary']}'";
     ?> />
+    
+    <label for='p_js'>JS File:</label>
+    <input type='file' name='js' id='p_js' />
+    
+    <label for='p_js'>CSS File:</label>
+    <input type='file' name='css' id='p_css' />
     
     <label for='tags'>Tags:</label>
     <input type='text' name='post[tags]' id='tags' <?php

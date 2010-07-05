@@ -63,6 +63,7 @@ class PostsController extends AbstractSubController{
             $post->execute();
             
             if ($post->isError()){
+                FB::log($post);
                 $this->newPost($post);
             }else{
                 $this->open($post->getId());
@@ -102,6 +103,9 @@ class PostsController extends AbstractSubController{
         $this->css[] = 'posts';
         $this->css[]='highlighter';
         $this->js[]='highlighter';
+        
+        if ($post['js']) $this->js[]=str_replace('.js','',$post['js']);
+        if ($post['css']) $this->css[]=str_replace('.css','',$post['css']);
     }
     
     protected function edit(){

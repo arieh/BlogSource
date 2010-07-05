@@ -75,6 +75,8 @@ class Post extends AbstractModel{
                     UNIX_TIMESTAMP(posts.created) as `created`,
                     UNIX_TIMESTAMP(posts.updated) as `updated`,
                     posts.summary,
+                    posts.js,
+                    posts.css,
                     comments.id as `c_id`,
                     comments.title as `c_title`,
                     comments.name as `c_name`,
@@ -102,12 +104,24 @@ class Post extends AbstractModel{
     protected function create(){
         $title = htmlentities($this->getOption('title'));
         $name = $this->generateName($title);
+        
+        if (isset($_FILES['js']) && $_FILES['js'])
+            $js = new File('js',dirname(__FILE__).'/../../../public/js/');
+        else $js='';
+        
+        if (isset($_FILES['css']) && $_FILES['css'])
+            $css = new File('css',dirname(__FILE__).'/../../../public/css/');
+        else $css='';
+        
+        $js = (string)$js;
+        $css = (string)$css;
+        
         $content = $this->getOption('content');
         $content = preg_replace('/<p>\\W*&nbsp;\\w*<\/p>/iu','',$content);
         $summary = htmlentities($this->getOption('summary'));
         $tags = $this->getOption('tags');
-        $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`non-html`,`summary`,`created`) VALUES(?,?,?,?,?,NOW())";
-        $this->db->update($sql,array($name,$title,$content,strip_tags($content),$summary));
+        $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`non-html`,`summary`,`js`,`css`,`created`) VALUES(?,?,?,?,?,?,?,NOW())";
+        $this->db->update($sql,array($name,$title,$content,strip_tags($content),$summary,$js,$css));
         $this->id = $this->db->getLastId();
         $this->insertTags($this->id,explode(',',$tags));
     }
@@ -161,6 +175,8 @@ class Post extends AbstractModel{
         $post['created'] = $data[0]['created'];
         $post['updated'] = $data[0]['updated'];
         $post['summary'] = $data[0]['summary'];
+        $post['js'] = $data[0]['js'];
+        $post['css'] = $data[0]['css'];
         
         $comments = array();
         $tags = array();

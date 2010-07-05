@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: blog
 Target Host: localhost
 Target Database: blog
-Date: 05/07/2010 11:52:11
+Date: 05/07/2010 12:20:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `posts` (
   `js` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `css` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Table structure for posts_has_tags
