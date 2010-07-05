@@ -69,8 +69,6 @@
 
 <div id="access_box">
 <a tabindex="1" class="access" href="#main">Skip Navigation</a>
-<a tabindex="2" href="http://arieh-laptop/blog/public/sitemap.php"
-class="access" rel="sitemap">Site-Map</a>
 </div>
 <header>
     <h1>
