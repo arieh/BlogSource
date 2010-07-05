@@ -44,7 +44,7 @@ class Router {
 		foreach ($arr as $key=>&$var){
 			if (is_array($var)) $this->correctInput($var);
 			elseif (is_string($var)){
-				if ($gpc) stripslashes($var);
+				if ($gpc) $var = stripslashes($var);
 				$var = urldecode($var);
 			}
 		}

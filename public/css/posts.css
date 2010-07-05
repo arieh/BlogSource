@@ -1,6 +1,12 @@
+#main > header {margin-bottom:60px;}
 #main > header h1{font-size:3em;text-align:center;}
 
-h4{font-weight:normal;font-size:0.9em;margin-bottom:10px}
+#info h3{font-weight:normal;font-size:0.9em;margin-bottom:10px; margin-top:0}
+
+article#content{padding:50px 50px 80px}
+article#content ol {padding:30px;list-style:decimal outside;}
+article#content ul {padding:30px;list-style:disc}
+article#content li {margin-bottom:10px;}
 
 .comment{margin-bottom:10px;}
 
@@ -26,7 +32,7 @@ small{text-align:right;display:block;}
 
 #info{margin:15px;overflow:auto;}
 
-#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:175px;}
+#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:180px;}
 
 #new-comment{width:500px; margin:0 auto;position:relative;}
 #new-comment legend span{margin-bottom:20px;display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
@@ -37,3 +43,4 @@ small{text-align:right;display:block;}
 #new-comment label {margin-top:5px; font-size:0.9em}
 
 .validation-advice{font-weight:bold; color:red;font-size:0.8em;}
+h4{font-weight:bold;}

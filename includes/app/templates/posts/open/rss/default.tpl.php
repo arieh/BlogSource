@@ -20,7 +20,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         <link><?php echo $this->base_path . '/posts/open/'.$this->post['name']."#cmt".$comment['id']?></link>
         <guid><?php echo $this->base_path . '/posts/open/'.$this->post['name']."#cmt".$comment['id']?></guid>
         <pubDate><?php echo date('r',$comment['created'])?></pubDate>
-        <description>[CDATA[<?php echo $comment['content'];?>]]</description>
+        <description><?php echo $comment['content'];?></description>
     </item>
     <?php endforeach;?>
 </channel>

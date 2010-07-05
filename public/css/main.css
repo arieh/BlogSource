@@ -2,6 +2,7 @@ body{
 	background:#9FC5ED;
 }
 ul,ol{list-style-type:none;}
+p,blockquote,li{text-align:justify;}
 iframe{border:inset 2px;}
 a,a:visited{text-decoration:none;color:#00f}
 a:hover{text-decoration:underline;}
@@ -55,7 +56,7 @@ input.submit{margin-right:10px;}
     border:3px solid #BAB6B6;
 }
 
-h1,h2,h3,h4{font-weight:bold; font-family:Helvetica,Arial,sans-serif}
+h1,h2,h3,h4{font-weight:bold; font-family:Helvetica,Arial,sans-serif; margin-bottom:20px;margin-top:20px;}
 
 h1{
 	font-size: 1.5em;
@@ -68,8 +69,9 @@ h1 a, h1 a:visited{color:#2583E6;}
 
 h2{
 	font-size:1.5em;
-	margin-bottom:10px;
 }
+h3{font-size:1.2em;}
+
 
 .dark{
     background:#e5e5e5;	

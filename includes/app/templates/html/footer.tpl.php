@@ -5,9 +5,6 @@
     <div id="clouds_s"></div>
     <div id="clouds_l"></div>
 </div>
-<!-- [if IE]>
-</div>
-<![endif]-->
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js'></script>
 <?php
 if ($this->online):

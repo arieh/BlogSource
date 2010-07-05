@@ -1,8 +1,8 @@
-<?php echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";?>
 <!DOCTYPE html>
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml"><head>
 <title><?php echo implode(' :: ',$this->titles);?></title>
-    <meta name="description" content='<?php echo $this->description;?>' />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="description" content='<?php echo $this->description;?>' />
     <?php
      if ($this->online):
         $src = $this->base_path . "min/b=" . $this->sub_path . "css&amp;f=";
@@ -18,10 +18,7 @@
            <link rel='stylesheet' type='text/css' href='<?php echo $this->base_path . "css/$name.css";?>' />
        <?php endforeach;?>
     <?php endif;?>
-    <!--[if IE]>
-    <link rel='stylesheet' type='text/css' href='<?php echo $this->base_path;?>css/ie.css' />
-    <script type='text/javascript' src="js/html5.js"></script>
-    <![endif]-->
+    
     <!--[if lt IE 7]>
         <style type="text/css">
         img, div { behavior: url(<?php echo $this->base_path?>css/iepngfix.htc) }
@@ -32,7 +29,10 @@
     <?php if (isset($this->tag) && $this->tag):?>
         <link rel="alternate" type="application/rss+xml" href="/rss/tags/<?php echo $this->tag['name']?>" title="Tag:<?php echo $this->tag['name']?> RSS Feed">
     <?php endif;?>
-    
+    <!--[if IE]>
+    <link rel='stylesheet' type='text/css' href='<?php echo $this->base_path;?>css/ie.css' />
+    <script type='text/javascript' src="js/html5.js"></script>
+    <![endif]-->
     <?php if (isset($this->post) && $this->post):?>
         <link rel="alternate" type="application/rss+xml" href="/rss/posts/open/<?php echo $this->post['name']?>" title="Post Comments RSS Feed">
     <?php endif;?>
@@ -51,21 +51,6 @@
     </style>
 </head>
 <body>
-<!--[if IE 6]>
-
-<div id='ie6'>
-
-<![endif]-->
-<!--[if IE 7]>
-
-<div id ='ie7'>
-
-<![endif]-->
-<!--[if IE 8]>
-
-<div id='ie8'>
-
-<![endif]-->
 
 <div id="access_box">
 <a tabindex="1" class="access" href="#main">Skip Navigation</a>

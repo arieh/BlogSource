@@ -16,7 +16,7 @@ class Tag extends AbstractModel{
     protected $_default_action = 'list';
     
     protected function listAll(){
-        $tags = $this->db->queryArray('select * from tags');
+        $tags = $this->db->queryArray('select * from tags order by `name` ASC');
         foreach($tags as &$tag) $tag['count'] = $this->db->count('posts_has_tags',array('tags_id'=>$tag['id']));
         $this->_tags =$tags;
     }

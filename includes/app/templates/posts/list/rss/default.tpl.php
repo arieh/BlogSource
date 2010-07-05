@@ -20,7 +20,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         <link><?php echo $this->base_path . '/posts/open/'.$post['name']?></link>
         <guid><?php echo $this->base_path . '/posts/open/'.$post['name']?></guid>
         <pubDate><?php echo date('r',$post['created'])?></pubDate>
-        <description>[CDATA[<?php echo $post['summary']?>]]</description>
+        <description><?php echo $post['summary']?></description>
     </item>
     <?php endforeach;?>
 </channel>
