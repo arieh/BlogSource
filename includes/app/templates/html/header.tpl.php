@@ -1,10 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<?php echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";?>
+<!DOCTYPE html>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
 <title><?php echo implode(' :: ',$this->titles);?></title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="description" content='<?php echo $this->description;?>' />
-    <link rel="icon" href="<?php echo $this->base_path;?>images/favicon.png" />
-    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css" type='text/css' />
     <?php
      if ($this->online):
         $src = $this->base_path . "min/b=" . $this->sub_path . "css&amp;f=";
@@ -22,6 +20,7 @@
     <?php endif;?>
     <!--[if IE]>
     <link rel='stylesheet' type='text/css' href='<?php echo $this->base_path;?>css/ie.css' />
+    <script type='text/javascript' src="js/html5.js"></script>
     <![endif]-->
     <!--[if lt IE 7]>
         <style type="text/css">
@@ -29,6 +28,14 @@
         </style>
     <![endif]-->
     <base href="<?php echo $this->base_path;?>" />
+    <link rel="alternate" type="application/rss+xml" href="/rss/" title="Posts RSS Feed">
+    <?php if (isset($this->tag) && $this->tag):?>
+        <link rel="alternate" type="application/rss+xml" href="/rss/tags/<?php echo $this->tag['name']?>" title="Tag:<?php echo $this->tag['name']?> RSS Feed">
+    <?php endif;?>
+    
+    <?php if (isset($this->post) && $this->post):?>
+        <link rel="alternate" type="application/rss+xml" href="/rss/posts/open/<?php echo $this->post['name']?>" title="Post Comments RSS Feed">
+    <?php endif;?>
     <style type="text/css">
     @font-face {
         font-family: 'Lobster1.3Regular';
@@ -38,7 +45,7 @@
         font-style: normal;
     }
     
-    #logo, #logo h1{
+    body > header h1{
         font-family: 'Lobster1.3Regular';
     }
     </style>
@@ -65,10 +72,8 @@
 <a tabindex="2" href="http://arieh-laptop/blog/public/sitemap.php"
 class="access" rel="sitemap">Site-Map</a>
 </div>
-<div id = 'header'>
-    <div id='logo'>
-        <?php if (isset($this->main) && $this->main) echo "<h1>"?>
+<header>
+    <h1>
         <a href='<?php echo $this->base_path;?>'>Arieh<span>.co.il</span></a>
-        <?php if (isset($this->main) && $this->main) echo "</h1>"?>
-    </div>
-</div>
+    </h1>
+</header>

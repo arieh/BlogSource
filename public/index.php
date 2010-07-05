@@ -16,7 +16,12 @@ $savant = new Savant3();
 $savant->addPath('template','../includes/app/templates');
 $savant->assign('base_path',$paths[0]);
 
-$controller = new HTMLController($router,$savant,new PancakeTF_PDOAccess(), false);
+if ($router->getFolder(0) == 'rss'){
+    $router->getFolder();
+    $controller = new RSSController($router,$savant,new PancakeTF_PDOAccess(), false);
+}else{
+    $controller = new HTMLController($router,$savant,new PancakeTF_PDOAccess(), false);
+}
 
 echo $controller->generate();
 ob_flush();

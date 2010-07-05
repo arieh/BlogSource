@@ -1,21 +1,22 @@
-h4{font-weight:normal;font-size:0.9em;margin-bottom:10px}
+#main > header h1{font-size:3em;text-align:center;}
 
-.post{
-	margin-bottom:10px;
-}
+h4{font-weight:normal;font-size:0.9em;margin-bottom:10px}
 
 .comment{margin-bottom:10px;}
 
-.comment .header{
+.comment header{
 	height:70px;
 	padding-left:90px;
 	margin-bottom:15px;
 }
 
-.header img{margin-left:-86px;border:2px solid #BAB6B6;}
-.header h3{margin-top:-70px}
+.comment header img{margin-left:-86px;border:2px solid #BAB6B6;}
+.comment header h1{margin-top:-70px}
+
+.comment h1{font-size:1em; text-align:left; margin-bottom:5px;} 
+.comment h2{font-size:0.8em;}
 .comment .content {margin-left:90px;}
-.comment small{text-align:left}
+.comment small{text-align:left;}
 
 .tags li{display:inline}
 
@@ -25,12 +26,12 @@ small{text-align:right;display:block;}
 
 #info{margin:15px;overflow:auto;}
 
-#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 10px; width:270px;}
+#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:175px;}
 
 #new-comment{width:500px; margin:0 auto;position:relative;}
-#new-comment legend span{display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
-#new-comment input, #new-comment textarea{width:460px;}
+#new-comment legend span{margin-bottom:20px;display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
+#new-comment input, #new-comment textarea{width:460px; display:block;margin:0 auto;}
 #new-comment textarea{height:200px;}
 #new-comment input.submit{margin:10px}
-#new-comment small {text-align:left}
+#new-comment small {text-align:left;}
 #new-comment label {margin-top:5px; font-size:0.9em}

@@ -1,4 +1,7 @@
+#main > header h1{font-size:3em;text-align:center;}
+
 .post{
 	width:460px;
 	margin:0 auto 15px;
+	float:none;
 }

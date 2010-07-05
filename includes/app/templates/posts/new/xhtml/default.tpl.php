@@ -13,6 +13,7 @@ if ($this->post instanceof Post){
 }
 else $post = false;
 ?>
+<header>
 <h1><?php
     if (isset($this->edit) && $this->edit){
         echo "Edit Post";
@@ -23,7 +24,7 @@ else $post = false;
         $action = 'posts/new';
     }
 ?></h1>
-
+</header>
 <form action='<?php echo $action;?>' method='post'>
 <fieldset>
     <label for='title'>Title:</label>

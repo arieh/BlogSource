@@ -1,6 +1,6 @@
 <?php
 class HTMLController{
-    private $css = array('main');
+    private $css = array('reset','main');
     
     private $js = array('main');
     

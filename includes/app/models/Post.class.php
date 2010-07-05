@@ -100,11 +100,11 @@ class Post extends AbstractModel{
     }
     
     protected function create(){
-        $title = $this->getOption('title');
+        $title = htmlentities($this->getOption('title'));
         $name = $this->generateName($title);
         $content = $this->getOption('content');
         $content = preg_replace('/<p>\\W*&nbsp;\\w*<\/p>/iu','',$content);
-        $summary = $this->getOption('summary');
+        $summary = htmlentities($this->getOption('summary'));
         $tags = $this->getOption('tags');
         $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`non-html`,`summary`,`created`) VALUES(?,?,?,?,?,NOW())";
         $this->db->update($sql,array($name,$title,$content,strip_tags($content),$summary));

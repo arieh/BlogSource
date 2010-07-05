@@ -41,7 +41,7 @@ abstract class AbstractSubController{
          $file = dirname(__FILE__) . '/../templates/' . $this->folder . '/' . $this->env . "/$name.tpl.php";
          if (file_exists($file)){
              return $this->view->fetch($this->folder . "/{$this->env}/$name.tpl.php");
-         }else return $this->view->fetch($this->folder . "/xhtml/$name.tpl.php");
+         }else return $this->view->fetch($this->folder . "/{$this->env}/$name.tpl.php");
      }
      
      protected function goHome(){

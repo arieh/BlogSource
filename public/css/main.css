@@ -1,33 +1,38 @@
 body{
 	background:#9FC5ED;
 }
+ul,ol{list-style-type:none;}
+iframe{border:inset 2px;}
 a,a:visited{text-decoration:none;color:#00f}
 a:hover{text-decoration:underline;}
 label{display:block;}
 p{margin-bottom:15px;}
-small {color:#4E4E4E}
+small {color:#4E4E4E; font-size:0.9em;}
 .clear{clear:both;}
 
-#header{
+#access_box a{display:inline-block; width:150px; text-indent:-9999px; overflow:hidden;}
+#access_box a:focus{text-indent:0}
+
+body > header{
 	width:960px;
 	margin:0 auto;
 	position:relative;
-	height:280px;
+	height:225px;
 	z-index:30;
 }
 
-#logo a{
+body > header h1 a{
 	position:absolute;
 	left:25px;
 	color:#034B98;
-	font-size:8em;
+	font-size:5em;
 	text-shadow: -7px 5px 22px #4F4F48;
 	display:block;
 }
 
-#logo a:hover{text-decoration:none}
+body > header h1 a:hover{text-decoration:none}
 
-#logo span{
+body > header h1 span{
 	font-size:0.6em;
 }
 
@@ -42,6 +47,7 @@ input.submit{margin-right:10px;}
 	border:5px solid #fff;
 	position:relative;
 	padding:20px 10px;
+	overflow:auto;
 }
 .box{
     background:#fff;
@@ -52,13 +58,14 @@ input.submit{margin-right:10px;}
 h1,h2,h3,h4{font-weight:bold; font-family:Helvetica,Arial,sans-serif}
 
 h1{
-	font-size: 3em;
+	font-size: 1.5em;
 	margin-bottom:25px;
-	text-align:center;
+	text-align:left;
 	color:#2583E6;
 }
+
 h1 a, h1 a:visited{color:#2583E6;}
-#logo h1{font-size:1em;}
+
 h2{
 	font-size:1.5em;
 	margin-bottom:10px;
@@ -68,9 +75,9 @@ h2{
     background:#e5e5e5;	
 }
 
-#subs{text-align:center;}
+#subs{text-align:center; font-size:1.5em; margin-bottom:10px; height:30px;}
 
-#footer{width:auto;background:url(../images/grass2.gif); height:40px; margin-top:30px; bottom:0}
+body > footer{width:auto;background:url(../images/grass2.gif); height:40px; margin-top:30px; bottom:0}
 
 
 #sky{
@@ -98,11 +105,14 @@ h2{
 	position:absolute;
 }
 
-.posts, #paging {width:620px;float:left;}
+.post, #paging {width:620px; margin-bottom:10px; float:left;}
 
-.post h3,#info h3{float:left;margin-right:10px;clear:right;font-size:0.8em;}
+.post h3,#info h3{margin-right:10px;font-size:0.8em;float:left}
 .tags {float:left; font-size:0.8em;}
 
-#tag-list {float:right; width:220px;}
-#tag-list li{margin-bottom:10px;}
+#tag-list {width:220px; position:absolute; top:106px; right:10px;}
+#tag-list li{margin-bottom:10px; margin-left:20px;}
 #paging {padding:0; text-align:center; width:614px;}
+
+figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
+.summary{padding:0 30px; margin-bottom:15px;}

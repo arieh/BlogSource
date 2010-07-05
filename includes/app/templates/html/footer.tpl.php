@@ -1,6 +1,6 @@
-<div id='footer'>
+<footer>
     
-</div>
+</footer>
 <div id="sky">
     <div id="clouds_s"></div>
     <div id="clouds_l"></div>

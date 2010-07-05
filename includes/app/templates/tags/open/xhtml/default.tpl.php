@@ -1,11 +1,14 @@
+<header>
 <h1><a href='tags/open/<?php echo $this->tag['name']?>'><?php echo $this->tag['name']?></a></h1>
-<ol>
+</header>
 <?php foreach ($this->posts as $post):?>
-    <li class='post box'>
-        <h2><a href='posts/open/<?php echo $post['name'];?>'><?php echo $post['title']?></a></h2>
-        <blockquote cite='posts/open/<?php echo $post['name'];?>'>
-            <?php echo $post['summary']?>
-        </blockquote>
-    </li>
+    <article class='post box'>
+        <header>
+            <h1><a href='posts/open/<?php echo $post['name'];?>'><?php echo $post['title']?></a></h1>
+        </header>
+        <figure>
+            <figcaption>Summary:</figcaption>
+            <blockquote class='summary' cite='posts/open/<?php echo $post['name'];?>'><?php echo $post['summary']?></blockquote>
+        </figure>
+    </article>
 <?php endforeach;?>
-</ol>

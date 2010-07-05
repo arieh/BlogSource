@@ -70,8 +70,9 @@ class Router {
 	    return (array_key_exists($name,self::$_params) || array_key_exists($name,$_POST) || array_key_exists($name,$_GET));
 	}
 	
-	public function getFolder($num){
-		return (isset(self::$stack[$num])) ? self::$stack[$num] : false;
+	public function getFolder($num=false){
+		if ($num === false) return array_pop(self::$stack);
+	    return (isset(self::$stack[$num])) ? self::$stack[$num] : false;
 	}
 	
 	public function getBasePath(){return self::$base_path;}
