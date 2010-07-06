@@ -9,6 +9,7 @@ a:hover{text-decoration:underline;}
 label{display:block;}
 p{margin-bottom:15px;}
 small {color:#4E4E4E; font-size:0.9em;}
+abbr[title] {border-bottom:1px dashed;cursor:help}
 .clear{clear:both;}
 
 #access_box a{display:inline-block; width:150px; text-indent:-9999px; overflow:hidden;}

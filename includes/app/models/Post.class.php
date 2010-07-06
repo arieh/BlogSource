@@ -28,32 +28,27 @@ class Post extends AbstractModel{
     
     protected function listAll(){
         $start = $this->getOption('start');
-        if (!$start) $start = 0;
+        if (!$start || !is_numeric($start) || $start<0) $start = 0;
         
-        $sql = "SELECT `posts`.*,tags.`name` as `t_name`,tags.`id` as `t_id`
+        $sql = "SELECT `posts`.*
                 FROM
                     posts
-                Right Join posts_has_tags ON posts.id = posts_has_tags.posts_id
-                Inner Join tags ON tags.id = posts_has_tags.tags_id
                 ORDER BY `posts`.`created` DESC
                 LIMIT $start,10";
         
+        $tags_sql = "SELECT `tags`.* FROM `tags`
+                    Inner Join `posts_has_tags` as pht on pht.tags_id = tags.id
+                    WHERE pht.posts_id = ?
+                    ORDER BY `tags`.`name`";
+        
         $posts = $this->db->queryArray($sql);
         
-        if (!$posts) return;
+        foreach ($posts as &$post){
+            //$post['tags'] = $this->db->queryArray($tags_sql,array($post['id']));
+            $post['comments'] = $this->db->count('comments',array('posts_id'=>$post['id']));
 
-        foreach($posts as $post){
-            if (!array_key_exists($post['id'],$this->_posts)){
-                $this->_posts[$post['id']] = $post;
-                $this->_posts[$post['id']];
-                $this->_posts[$post['id']]['comments'] = $this->db->count('comments',array('posts_id'=>$post['id']));
-                $this->_posts[$post['id']]['tags'] = array();
-            }
-            if (!array_key_exists($post['t_id'],$this->_posts[$post['id']]['tags'])){
-                $this->_posts[$post['id']]['tags'][$post['t_id']] = array('id'=>$post['t_id'],'name'=>$post['t_name']);
-            }
         }
-        
+        $this->_posts = $posts;
         $this->_count = $this->db->count('posts');
     }
     
