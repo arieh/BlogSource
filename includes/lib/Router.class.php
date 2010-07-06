@@ -38,6 +38,9 @@ class Router {
 		}
 	}
 	
+	public function removeFolder($int){
+	    array_splice(self::$stack,$int,1);
+	}
 	
 	private function correctInput(&$arr){
 		$gpc = get_magic_quotes_gpc();

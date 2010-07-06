@@ -17,8 +17,8 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
     <?php foreach ($this->commentss as $comment):?>
     <item>
         <title><?php echo $comment['title']?></title>
-        <link><?php echo $this->base_path . '/posts/open/'.$this->post['name']."#cmt".$comment['id']?></link>
-        <guid><?php echo $this->base_path . '/posts/open/'.$this->post['name']."#cmt".$comment['id']?></guid>
+        <link><?php echo $this->base_path . 'posts/open/'.$this->post['name']."#cmt".$comment['id']?></link>
+        <guid><?php echo $this->base_path . 'posts/open/'.$this->post['name']."#cmt".$comment['id']?></guid>
         <pubDate><?php echo date('r',$comment['created'])?></pubDate>
         <description><?php echo $comment['content'];?></description>
     </item>

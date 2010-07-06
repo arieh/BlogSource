@@ -41,6 +41,7 @@ small{text-align:right;display:block;}
 #new-comment input.submit{margin:10px}
 #new-comment small {text-align:left;}
 #new-comment label {margin-top:5px; font-size:0.9em}
+#new-comment .extra {display:none;}
 
 .validation-advice{font-weight:bold; color:red;font-size:0.8em;}
 h4{font-weight:bold;}

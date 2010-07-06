@@ -27,7 +27,24 @@ abstract class AbstractSubController{
         $this->user   = new User;
         $this->env    = $env;
         $this->view->assign('tinymce',false);
-        $temp_action = $router->getFolder(1);
+        $this->chooseAction();
+     }
+     
+     protected function chooseAction(){
+        $temp_action = $this->router->getFolder(1);
+        
+        
+        if ($this->env !='xhtml'){
+            $env_action_folder = $this->env."_actions";
+            $env_def_action = $this->env."_default_action";
+            
+            if (isset($this->$env_action_folder) && in_array($temp_action,$this->$env_action_folder)){
+                $this->action = $temp_action;
+            }elseif (isset($this->$env_def_action)) $this->action = $this->$env_def_action;
+        }
+        
+        if ($this->action) return;
+        
         if (!$temp_action || !array_key_exists($temp_action,$this->actions)) $this->action = $this->default_action;
         else $this->action = $temp_action;
      }

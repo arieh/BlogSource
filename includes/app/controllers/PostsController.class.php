@@ -10,6 +10,10 @@ class PostsController extends AbstractSubController{
         ,'comment' => 'comment'
     );
     
+    protected $rss_actions = array('open','list');
+    
+    protected $rss_default_action = 'list';
+    
     protected $css = array();
     
     protected $default_action = 'list';
@@ -20,11 +24,6 @@ class PostsController extends AbstractSubController{
     
     private $title = 'Posts';
     private $description = 'A list of all posts';
-    
-    public function __construct(Router $router, Savant3 $savant, $env = 'xhtml'){
-        parent::__construct($router,$savant,$env);
-        if ($env=='rss') $this->action = 'list';
-    }
     
     
     protected function listAll(){
@@ -181,7 +180,6 @@ class PostsController extends AbstractSubController{
                     if ($comment->isError(CommentErrors::BAD_POST)){
                         $this->listAll();
                     }
-                    return;
                 }
                 $this->open($id);
             break;

@@ -17,8 +17,8 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
     <?php foreach ($this->posts as $post):?>
     <item>
         <title><?php echo $post['title']?></title>
-        <link><?php echo $this->base_path . '/posts/open/'.$post['name']?></link>
-        <guid><?php echo $this->base_path . '/posts/open/'.$post['name']?></guid>
+        <link><?php echo $this->base_path . 'posts/open/'.$post['name']?></link>
+        <guid><?php echo $this->base_path . 'posts/open/'.$post['name']?></guid>
         <pubDate><?php echo date('r',$post['created'])?></pubDate>
         <description><?php echo $post['summary']?></description>
     </item>

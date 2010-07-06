@@ -5,7 +5,7 @@
 	<meta name="description" content='<?php echo $this->description;?>' />
     <?php
      if ($this->online):
-        $src = $this->base_path . "min/b=" . $this->sub_path . "css&amp;f=";
+        $src = $this->base_path . "min/b=css&amp;f=";
         $sep='';
         foreach($this->css as $name){
             $src .=$sep.$name.'.css';

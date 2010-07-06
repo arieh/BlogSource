@@ -4,6 +4,7 @@ class CommentErrors{
     const NO_TITLE = 2;
     const NO_NAME = 3;
     const BAD_EMAIL = 4;
+    const ROBOT = 100;
 }
 
 class Comment extends AbstractModel{
@@ -13,6 +14,11 @@ class Comment extends AbstractModel{
     );
     
     protected function create(){
+        if ($this->getOption('extra')){
+            $this->setError(CommentErrors::ROBOT);
+            return;
+        }
+        
         $post = $this->getOption('id');
         $title = trim($this->getOption('title'));
         $name = trim($this->getOption('name'));
@@ -24,6 +30,8 @@ class Comment extends AbstractModel{
         if (strlen($title)==0) $this->setError(CommentErrors::NO_TITLE);
         if (strlen($name)==0) $this->setError(CommentErrors::NO_NAME);
         if (!filter_var($email,FILTER_VALIDATE_EMAIL)) $this->setError(CommentErrors::BAD_EMAIL);
+        
+        if ($this->isError()) return;
         
         $title = strip_tags($title);
         $name = strip_tags($name);

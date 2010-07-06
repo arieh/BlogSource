@@ -62,6 +62,9 @@
         <label for='c_content'>Content:</label>
         <textarea id='c_content' name='comment[content]' rows='20'  cols='60'></textarea>
         
+        <label for='c_extra' class='extra'>Do Not Enter Value - This is for bots!</label>
+        <input type='text' name='comment[extra]' id='c_extra' class='extra' />
+        
         <input type='submit' value='Send' />
     </fieldset>
     </form>
