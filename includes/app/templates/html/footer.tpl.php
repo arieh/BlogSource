@@ -8,7 +8,7 @@
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js'></script>
 <?php
 if ($this->online):
-$src = $this->base_path . "min/b=" . $this->sub_path . "js&amp;f=";
+$src = $this->cdn . "b=" . $this->sub_path . "js&amp;f=";
 $sep='';
 foreach($this->js as $name){
     $src .=$sep.$name.'.js';

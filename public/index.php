@@ -15,6 +15,7 @@ $router = new Router($paths[1]);
 $savant = new Savant3();
 $savant->addPath('template','../includes/app/templates');
 $savant->assign('base_path',$paths[0]);
+$savant->assign('cdn',$paths[2]);
 
 $debug = false;
 
