@@ -2,6 +2,7 @@
 <html lang="en-us" xmlns="http://www.w3.org/1999/xhtml"><head>
 <title><?php echo implode(' :: ',$this->titles);?></title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="google-site-verification" content="BGnm02T2G_Ld6zdRRLjglg3V4BvswH4_p3eLLQMoDz8" />
 	<meta name="description" content='<?php echo $this->description;?>' />
     <?php
      if ($this->online):

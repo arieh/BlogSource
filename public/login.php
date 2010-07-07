@@ -15,7 +15,7 @@ $login = (
 $user = new User;
 if ($login) $user->setId(2);
 else{
-    FB::log(sha1($_POST['pass']));
+    
 }
 header("Location:{$paths[0]}");
     

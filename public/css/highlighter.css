@@ -30,7 +30,7 @@
 
 .dp-highlighter .bar
 {
-	padding-left: 45px;
+	margin-left: 10px;
 }
 
 .dp-highlighter.collapsed .bar,
@@ -43,7 +43,7 @@
 {
 	list-style: decimal; /* for ie */
 	background-color: #fff;
-	margin: 0px 0px 1px 45px !important; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+	margin: 0px 0px 1px 10px !important; /* 1px bottom margin seems to fix occasional Firefox scrolling */
 	padding: 0px;
 	color: #5C5C5C;
 }

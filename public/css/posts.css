@@ -1,5 +1,5 @@
 #main > header {margin-bottom:60px;}
-#main > header h1{font-size:3em;text-align:center;}
+#main > header h1{font-size:2.5em; text-align:center;}
 
 #info h3{font-weight:normal;font-size:0.9em;margin-bottom:10px; margin-top:0}
 
@@ -32,7 +32,8 @@ small{text-align:right;display:block;}
 
 #info{margin:15px;overflow:auto;}
 
-#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:180px;}
+#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:220px;}
+#info .tags a{text-decoration:underline;}
 
 #new-comment{width:500px; margin:0 auto;position:relative;}
 #new-comment legend span{margin-bottom:20px;display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
@@ -45,3 +46,5 @@ small{text-align:right;display:block;}
 
 .validation-advice{font-weight:bold; color:red;font-size:0.8em;}
 h4{font-weight:bold;}
+
+article#content .dp-highlighter ol,.dp-highlighter .bar{padding:0 0 0 30px;}

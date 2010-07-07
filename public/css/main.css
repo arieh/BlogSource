@@ -1,5 +1,6 @@
 body{
 	background:#9FC5ED;
+	font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
 }
 ul,ol{list-style-type:none;}
 p,blockquote,li{text-align:justify;}
