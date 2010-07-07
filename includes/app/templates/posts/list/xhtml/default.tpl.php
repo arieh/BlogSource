@@ -2,6 +2,7 @@
     Javascript, Mootools, PHP, HTML and more
 </header>
 
+<div id='article-list'>
 <?php foreach ($this->posts as $post):?>
     <article class='post box'>
         <header>
@@ -16,6 +17,7 @@
         </footer>
     </article>
 <?php endforeach;?>
+</div>
 
 <aside id='tag-list' class='box dark'>
     <header>

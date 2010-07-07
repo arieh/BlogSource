@@ -51,14 +51,4 @@ function move(){
 }
 
 exactPeriodical(move,100);
-
-
-var tags = $('tag-list')
-	, main = $('main');
-
-if (tags){
-	t_size = tags.getSize();
-	m_size = main.getComputedSize();
-	if (t_size.y.toInt()+200>m_size.height.toInt()) main.setStyle('height',t_size.toInt()+200);
-}	
 });

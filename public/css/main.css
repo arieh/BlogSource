@@ -83,40 +83,41 @@ h3{font-size:1.2em;}
 
 body > footer{width:auto;background:url(../images/grass2.gif); height:40px; margin-top:30px; bottom:0}
 
+#article-list{float:left;width:620px;}
 
-#sky{
-	width:100%;
-	height:250px;
-	position:absolute;
-	top:50px;
-	padding:0; margin:0;
-}
-
-#clouds_l{
-	width:100%;
-	height:115px;
-	background:url(../images/cloud.gif) repeat-x 0 0;
-	z-index:50;
-	top:85px;
-	position:absolute;
-}
-
-#clouds_s{
-	width:100%;
-	height:58px;
-	background:url(../images/cloud.gif) repeat-x 0 bottom;
-	z-index:10;
-	position:absolute;
-}
-
-.post, #paging {width:620px; margin-bottom:10px; float:left;}
+.post, #paging {margin-bottom:10px;}
 
 .post h3,#info h3{margin-right:10px;font-size:0.8em;float:left}
 .tags {float:left; font-size:0.8em;}
 
-#tag-list {width:220px; position:absolute; top:106px; right:10px;}
+#tag-list {width:220px; float:right;}
 #tag-list li{margin-bottom:10px; margin-left:20px;}
 #paging {padding:0; text-align:center; width:614px;}
 
 figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
 .summary{padding:0 30px; margin-bottom:15px;}
+
+#sky{
+    width:100%;
+    height:250px;
+    position:absolute;
+    top:50px;
+    padding:0; margin:0;
+}
+
+#clouds_l{
+    width:100%;
+    height:115px;
+    background:url(../images/cloud.gif) repeat-x 0 0;
+    z-index:50;
+    top:85px;
+    position:absolute;
+}
+
+#clouds_s{
+    width:100%;
+    height:58px;
+    background:url(../images/cloud.gif) repeat-x 0 bottom;
+    z-index:10;
+    position:absolute;
+}

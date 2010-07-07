@@ -2,7 +2,7 @@
 class HTMLController{
     private $css = array('reset','main');
     
-    private $js = array('more','main');
+    private $js = array('main');
     
     private $titles = array('Arieh.co.il');
     
