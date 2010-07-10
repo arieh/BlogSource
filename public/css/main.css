@@ -3,15 +3,20 @@ body{
 	font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
 }
 ul,ol{list-style-type:none;}
-p,blockquote,li{text-align:justify;}
+p,blockquote,li{text-align:justify;line-height:20px;}
 iframe{border:inset 2px;}
 a,a:visited{text-decoration:none;color:#00f}
 a:hover{text-decoration:underline;}
 label{display:block;}
-p{margin-bottom:15px;}
+p,ul,ol{margin-bottom:20px;}
+p{width:700px;}
 small {color:#4E4E4E; font-size:0.9em;}
 abbr[title] {border-bottom:1px dashed;cursor:help}
+blockquote + p>cite{display:block;text-align:right;}
+blockquote{padding-left:80px;background: url("../images/q.png") no-repeat scroll 5px -10px; min-height:80px;font-size:90%}
+blockquote p {width:446px; padding-right:45px; background: url("../images/small_q.png") no-repeat scroll bottom right;padding-bottom:15px;min-height:65px}
 .clear{clear:both;}
+
 
 #access_box a{display:inline-block; width:150px; text-indent:-9999px; overflow:hidden;}
 #access_box a:focus{text-indent:0}
@@ -95,7 +100,6 @@ body > footer{width:auto;background:url(../images/grass2.gif); height:40px; marg
 #paging {padding:0; text-align:center; width:614px;}
 
 figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
-.summary{padding:0 30px; margin-bottom:15px;}
 
 #sky{
     width:100%;
@@ -121,3 +125,4 @@ figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
     z-index:10;
     position:absolute;
 }
+

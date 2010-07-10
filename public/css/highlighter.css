@@ -5,7 +5,7 @@
 	background-color: #E7E5DC;
 	width: 99%;
 	overflow: auto;
-	margin: 18px 0 18px 0 !important;
+	margin: 18px 0 18px 0;
 	padding-top: 1px; /* adds a little border on top when controls are hidden */
 }
 

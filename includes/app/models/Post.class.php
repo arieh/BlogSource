@@ -113,6 +113,7 @@ class Post extends AbstractModel{
         
         $content = $this->getOption('content');
         $content = preg_replace('/<p>\\W*&nbsp;\\w*<\/p>/iu','',$content);
+        $content = str_replace ("<br />",'',$content);
         $summary = htmlentities($this->getOption('summary'));
         $tags = $this->getOption('tags');
         $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`non-html`,`summary`,`js`,`css`,`created`) VALUES(?,?,?,?,?,?,?,NOW())";

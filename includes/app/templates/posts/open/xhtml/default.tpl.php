@@ -1,6 +1,10 @@
 <header>
     <h1><a href='posts/open/<?php echo $this->post['name'];?>'><?php echo $this->post['title']?></a></h1>
 </header>
+<article id='content' class='box'>
+<?php echo $this->post['content']?>
+</article>
+
 <aside id='info'>
     <p><dfn>Created On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['created'])?>'><?php echo date('D, M d Y',$this->post['created'])?></time></p>
     <?php if ($this->post['updated']):?>
@@ -13,9 +17,6 @@
     <?php endforeach;?>
     </ul>
 </aside>
-<article id='content' class='box'>
-<?php echo $this->post['content']?>
-</article>
 <?php if ($this->user->isAdmin()):?>
 <p>
     <a href='posts/edit/<?php echo $this->post['id'];?>'>Edit</a>
