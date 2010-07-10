@@ -1,15 +1,34 @@
 p{margin-left:15px;}
 blockquote p{width:620px}
-#main > header {margin-bottom:60px;}
-#main > header h1{font-size:2.5em; text-align:center; height:45px;}
 
 #info h3{font-weight:normal;font-size:0.9em;margin-bottom:10px; margin-top:0}
 
-#content{padding:50px 50px 80px;margin-top:35px;}
+#content{
+	padding:210px 50px 80px;
+	margin-top:0;
+	border-top:none;
+	position:relative;
+	margin-bottom:20px
+}
+#content header {
+	background:#EEEEEE; 
+	border-bottom:3px solid #BAB6B6; 
+	position:absolute; 
+	top:0; 
+	left:-2px;
+	padding:0 50px;
+	width:840px;
+	height:110px;
+}
+#content header h1{font-size:2.5em; text-align:center; height:45px;}
 #content ol, #content ul{padding:0 60px; width:640px}
 #content ol {list-style:decimal outside;}
 #content ul {list-style:disc}
 #content li {margin-bottom:5px;}
+
+#info{margin:15px;overflow:hidden;height:45px; position:absolute; top:140px; width:920px;}
+#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:220px;}
+#info .tags a{text-decoration:underline;}
 
 .comment{margin-bottom:10px;}
 
@@ -30,13 +49,6 @@ blockquote p{width:620px}
 .tags li{display:inline}
 
 small{text-align:right;display:block;}
-
-#content{margin-bottom:20px}
-
-#info{margin:15px;overflow:auto;height:35px; position:absolute; top:90px; width:920px;}
-
-#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:220px;}
-#info .tags a{text-decoration:underline;}
 
 #new-comment{width:500px; margin:0 auto;position:relative;}
 #new-comment legend span{margin-bottom:20px;display:block; width:500px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }

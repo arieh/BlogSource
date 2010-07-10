@@ -1,7 +1,7 @@
+<article id='content' class='box'>
 <header>
     <h1><a href='posts/open/<?php echo $this->post['name'];?>'><?php echo $this->post['title']?></a></h1>
 </header>
-<article id='content' class='box'>
 <?php echo $this->post['content']?>
 </article>
 
