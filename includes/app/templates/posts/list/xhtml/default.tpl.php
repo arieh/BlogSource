@@ -24,7 +24,7 @@
     </header>
     <ol>
     <?php foreach ($this->tags as $tag):?>
-        <li class='tag'><a href='tags/open/<?php echo $tag['name'];?>'><?php echo $tag['name'];?></a> (<?php echo $tag['count'];?>)</li>
+        <li class='tag'><a href='tags/open/<?php echo urlencode($tag['name']);?>'><?php echo $tag['name'];?></a> (<?php echo $tag['count'];?>)</li>
     <?php endforeach;?>
     </ol>
 </aside>

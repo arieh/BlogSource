@@ -1,6 +1,6 @@
 <?php
 class TagErrors{
-
+    const BAD_NAME=1;
 }
 
 class Tag extends AbstractModel{

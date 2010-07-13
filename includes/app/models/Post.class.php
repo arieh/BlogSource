@@ -138,6 +138,7 @@ class Post extends AbstractModel{
         $tags = $this->getOption('tags');
         
         $sql = "UPDATE `posts` SET `title`=?,`content`=?,`summary`=? WHERE `id`=?";
+        
         $this->db->update($sql,array($title,$content,$summary,$id));
         $this->emptyTags($id);
         $this->insertTags($id,explode(',',$tags));

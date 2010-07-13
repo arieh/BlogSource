@@ -163,7 +163,7 @@ class PostsController extends AbstractSubController{
             return;
         }
         
-        $this->open($id);
+        header('Location:'.$this->view->base_path.'posts/open/'.$id;
     }
     
     protected function comment(){
