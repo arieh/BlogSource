@@ -8,6 +8,7 @@ var small = $('clouds_s')
 	, toggle = false
 	, toggle_contact = false
 	, stopped = false
+	, wind = new Element('span',{id:'wind',title:'toggle (on/off) wind effect'}).inject($$('body>header')[0]).appendText('Toggle Wind')
 	, handle;
 
 function exactPeriodical(callback,timeout){
@@ -53,7 +54,7 @@ function move(){
 
 handle = exactPeriodical(move,100);
 
-$('wind').addEvent('click',function(){
+wind.addEvent('click',function(){
 	if (stopped){
 		exactPeriodical(move,100);
 		stopped = false;

@@ -60,5 +60,4 @@
     <h1>
         <a href='<?php echo $this->base_path;?>'>Arieh<span>.co.il</span></a>
     </h1>
-    <a id='wind' href='javascript:;'>Toggle Wind</a>
 </header>

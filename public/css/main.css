@@ -16,11 +16,12 @@ blockquote + p>cite{display:block;text-align:right;}
 blockquote{padding-left:80px;background: url("../images/q.png") no-repeat scroll 5px -10px; min-height:80px;font-size:90%}
 blockquote p {width:446px; padding-right:45px; background: url("../images/small_q.png") no-repeat scroll bottom right;padding-bottom:15px;min-height:65px}
 textarea{font-family:Helvetica,Arial,sans-serif; font-size:90%;padding:10px}
+sup{font-size:70%; vertical-align:top;}
 .clear{clear:both;}
 
 
 #access_box a{display:inline-block; width:150px; text-indent:-9999px; overflow:hidden;}
-#access_box a:focus{text-indent:0}
+#access_box a:focus, #access_box a:hover{text-indent:0}
 
 body > header{
 	width:960px;
@@ -136,4 +137,4 @@ figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
 #paging ol{width:620px; text-align:center;}
 #paging li{display:inline}
 
-#wind{position:absolute;top:210px; font-size:70%}
+#wind{position:absolute;top:210px; font-size:70%; color:#00f; cursor:pointer;}

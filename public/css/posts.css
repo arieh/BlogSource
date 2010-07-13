@@ -42,7 +42,7 @@ figcaption{display:inline; font-size:80%}
 .comment{width:620px; margin:0 auto 10px}
 
 .comment header{
-	height:70px;
+	height:auto;
 	padding-left:90px;
 	margin-bottom:15px;
 }
@@ -51,9 +51,11 @@ figcaption{display:inline; font-size:80%}
 
 .comment header img{margin-left:-86px;border:2px solid #BAB6B6;}
 
-.comment h1{font-size:1em; text-align:left; margin-bottom:5px;margin-top:-70px} 
-.comment h2{font-size:0.8em;}
+.comment h1{font-size:1em; text-align:left; margin-bottom:5px;margin-top:-80px} 
+.comment h2{font-size:1em; margin:10px 0;}
+.comment dfn{font-style:normal;font-size:0.8em}
 .comment .content {margin-left:90px; font-size:90%;}
+.comment .content p{ width:530px; margin:0}
 .comment small{text-align:left;}
 
 .tags li{display:inline}
@@ -61,15 +63,18 @@ figcaption{display:inline; font-size:80%}
 small{text-align:right;display:block;}
 
 #new-comment{width:620px; margin:60px auto 0;position:relative;}
+#new-comment header{overflow:hidden; height:auto;}
 #new-comment legend span{margin-bottom:20px;display:block; width:620px; text-align:center; top:0; text-transform:uppercase; font-weight:bold }
-#new-comment input, #new-comment textarea,#new-comment .validation-advice{width:580px; display:block;margin:0 auto;}
-#new-comment textarea{height:200px;}
-#new-comment input.submit{margin:10px}
-#new-comment small {text-align:left;}
-#new-comment label {margin-top:5px; font-size:0.9em}
+#new-comment h1 {margin-top:-85px}
+#new-comment h1,#new-comment h2{overflow:hidden; font-size:1em; font-weight:normal;}
+#new-comment label span {float:left; width:50px; padding-right:5px; text-align:right; margin-top:5px;}
+#new-comment input {float:left;width:460px;}
+#new-comment textarea{height:200px; width:499px; font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;}
+#new-comment input[type=submit]{margin:10px 0 0 90px; width:520px}
+#new-comment small {text-align:left;padding-left:55px;}
 #new-comment .extra {display:none;}
+#new-comment .validation-advice{padding-left:55px;width:475px; display:block;color:red;font-size:0.8em;}
 
-.validation-advice{font-weight:bold; color:red;font-size:0.8em;}
 h4{font-weight:bold;}
 
 #content .dp-highlighter ol,.dp-highlighter .bar{padding:0 0 0 30px;width:auto;}

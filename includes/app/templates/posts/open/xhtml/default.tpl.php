@@ -34,9 +34,9 @@
                 <?php
                     $hash = md5(strtolower(trim($comment['email'])));
                 ?>
-                <img src="http://www.gravatar.com/avatar/<?php echo $hash?>?d=identicon&amp;=70" height='70' width='70' alt='gravatar image' />
+                <img src="http://www.gravatar.com/avatar/<?php echo $hash?>?d=identicon&amp;s=70" height='70' width='70' alt='gravatar image' />
                 <h1><?php echo $comment['title'];?></h1>
-                <h2>by <?php echo $comment['name']?></h2>
+                <h2><dfn>by</dfn> <?php echo $comment['name']?></h2>
                 <small><dfn>Created On: </dfn><time datetime='<?php echo date('Y-m-d',$comment['created'])?>'><?php echo date('D, M d Y',$this->post['created'])?></time></small>
             </header>
             <div class='content'>
@@ -48,21 +48,26 @@
         </article>
         <?php endforeach;?>
     <?php endif;?>
-    <form id='new-comment' action='posts/comment/new/<?php echo $this->post['id']?>' method='post' class='box'>
+    
+    <form id='new-comment' action='posts/comment/new/<?php echo $this->post['id']?>' method='post' class='box comment'>
     <fieldset>
         <legend><span>New Comment</span></legend>
-        <label for='c_title'>Title:</label>
-        <input type='text' name='comment[title]' id='c_title' class='required' />
+        <header>
+        <img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=identicon&amp;s=70" height='70' width='70' alt='gravatar image' />
+        <h1><label for='c_title'><span>Title:</span>
+        <input type='text' name='comment[title]' id='c_title' class='required' /></label></h1>
         
-        <label for='c_name'>Name:</label>
-        <input type='text' name='comment[name]' id='c_name' class='required' />
+        <h2><label for='c_name'><span>Name:</span>
+        <input type='text' name='comment[name]' id='c_name' class='required' /></label></h2>
         
-        <label for='c_email'>Email: <small>will not be published</small></label>
-        <input type='text' name='comment[email]' id='c_email' class='required validate-email' />
-        
-        <label for='c_content'>Content:</label>
-        <textarea id='c_content' name='comment[content]' rows='20'  cols='60'></textarea>
-        
+        <label for='c_email'><span>Email:</span>
+        <input type='text' name='comment[email]' id='c_email' class='required validate-email' /></label>
+        <small>will not be published</small>
+        </header>
+        <div class='content'>
+            <label for='c_content'>Content:</label>
+            <textarea id='c_content' name='comment[content]' rows='20'  cols='60'></textarea>
+        </div>
         <label for='c_extra' class='extra'>Do Not Enter Value - This is for bots!</label>
         <input type='text' name='comment[extra]' id='c_extra' class='extra' />
         
