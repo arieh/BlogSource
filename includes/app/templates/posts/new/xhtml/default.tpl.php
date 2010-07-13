@@ -33,9 +33,9 @@ else $post = false;
     ?> />
     
     <label for='summary'>Summary:</label>
-    <input type='text' name='post[summary]' id='summary' <?php
-        if ($post) echo "value = '{$post['summary']}'";
-    ?> />
+    <textarea type='text' name='post[summary]' id='summary' rows='30' cols='60' /><?php
+        if ($post) echo "{$post['summary']}";
+    ?></textarea>
     
     <label for='p_js'>JS File:</label>
     <input type='file' name='js' id='p_js' />

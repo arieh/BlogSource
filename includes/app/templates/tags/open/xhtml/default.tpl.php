@@ -6,9 +6,8 @@
         <header>
             <h1><a href='posts/open/<?php echo $post['name'];?>'><?php echo $post['title']?></a></h1>
         </header>
-        <figure>
-            <figcaption>Summary:</figcaption>
-            <blockquote class='summary' cite='posts/open/<?php echo $post['name'];?>'><?php echo $post['summary']?></blockquote>
-        </figure>
+            <blockquote class='summary' cite='posts/open/<?php echo $post['name'];?>'>
+                <p><?php echo $post['summary']?></p>
+            </blockquote>
     </article>
 <?php endforeach;?>

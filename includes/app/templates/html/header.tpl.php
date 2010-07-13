@@ -53,9 +53,9 @@
 </head>
 <body>
 
-<div id="access_box">
+<nav id="access_box">
 <a tabindex="1" class="access" href="#main">Skip Navigation</a>
-</div>
+</nav>
 <header>
     <h1>
         <a href='<?php echo $this->base_path;?>'>Arieh<span>.co.il</span></a>

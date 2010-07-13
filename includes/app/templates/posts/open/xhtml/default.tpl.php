@@ -3,8 +3,6 @@
     <h1><a href='posts/open/<?php echo $this->post['name'];?>'><?php echo $this->post['title']?></a></h1>
 </header>
 <?php echo $this->post['content']?>
-</article>
-
 <aside id='info'>
     <p><dfn>Created On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['created'])?>'><?php echo date('D, M d Y',$this->post['created'])?></time></p>
     <?php if ($this->post['updated']):?>
@@ -13,16 +11,18 @@
     <h3>Tags:</h3>
     <ul class='tags'>
     <?php foreach ($this->tags as $tag):?>
-        <li><a href='tags/<?php echo $tag['name']?>'><?php echo $tag['name']?></a></li>
+        <li><a href='tags/<?php echo urlencode($tag['name'])?>'><?php echo $tag['name']?></a></li>
     <?php endforeach;?>
     </ul>
 </aside>
+</article>
+
 <?php if ($this->user->isAdmin()):?>
 <p>
     <a href='posts/edit/<?php echo $this->post['id'];?>'>Edit</a>
 </p>
 <?php endif;?>
-<section id='comments'>
+<aside id='comments'>
     <header>
         <h1>Comments</h1>
     </header>
@@ -69,4 +69,4 @@
         <input type='submit' value='Send' />
     </fieldset>
     </form>
-</section>
+</aside>

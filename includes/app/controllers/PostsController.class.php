@@ -47,7 +47,9 @@ class PostsController extends AbstractSubController{
     protected function newPost($post=null){
         if ($this->user->isAdmin()){
             $this->folder .= '/new';
-            $this->view->assign('tinymce',true);
+            //$this->view->assign('tinymce',true);
+            $this->css[]='new';
+            
             if ($post) $this->view->assign('post',$post);
             else $this->view->assign('post',false);
         }else $this->goHome();
@@ -65,7 +67,7 @@ class PostsController extends AbstractSubController{
                 FB::log($post);
                 $this->newPost($post);
             }else{
-                $this->open($post->getId());
+                header('Location:'.$this->view->base_path.'posts/open/'.$post->getName());
             }
         }else $this->folder .='/list';
     }
@@ -132,10 +134,11 @@ class PostsController extends AbstractSubController{
           $sep=',';
         }
         
+        $this->css[]='new';
         $this->view->assign('post',$post->getPost());
         $this->view->assign('tags',$tags);
         $this->view->assign('edit',true);
-        $this->view->assign('tinymce',true);
+       // $this->view->assign('tinymce',true);
         
         $this->folder .= '/new';
         $this->title = "Edit Post";

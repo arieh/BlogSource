@@ -26,6 +26,8 @@ class Post extends AbstractModel{
     
     protected $_id = 0;
     
+    protected $_name = '';
+    
     protected function listAll(){
         $start = $this->getOption('start');
         if (!$start || !is_numeric($start) || $start<0) $start = 0;
@@ -98,7 +100,7 @@ class Post extends AbstractModel{
     
     protected function create(){
         $title = htmlentities($this->getOption('title'));
-        $name = $this->generateName($title);
+        $this->_name = $name = $this->generateName($title);
         
         if (isset($_FILES['js']) && $_FILES['js'])
             $js = new File('js',dirname(__FILE__).'/../../../public/js/');
@@ -135,8 +137,8 @@ class Post extends AbstractModel{
         $summary = $this->getOption('summary');
         $tags = $this->getOption('tags');
         
-        $sql = "UPDATE `posts` SET `title`=?,`content`=? WHERE `id`=?";
-        $this->db->update($sql,array($title,$content,$id));
+        $sql = "UPDATE `posts` SET `title`=?,`content`=?,`summary`=? WHERE `id`=?";
+        $this->db->update($sql,array($title,$content,$summary,$id));
         $this->emptyTags($id);
         $this->insertTags($id,explode(',',$tags));
     }
@@ -149,6 +151,7 @@ class Post extends AbstractModel{
     }
     
     private function generateName($title){
+        $title = preg_replace('/([^a-zA-Z0-9]+)/i','',$title);
         $title = strtolower(str_replace(' ','-',$title));
         $i=0;
         $name = $title;
