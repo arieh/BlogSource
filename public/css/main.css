@@ -15,6 +15,7 @@ abbr[title] {border-bottom:1px dashed;cursor:help}
 blockquote + p>cite{display:block;text-align:right;}
 blockquote{padding-left:80px;background: url("../images/q.png") no-repeat scroll 5px -10px; min-height:80px;font-size:90%}
 blockquote p {width:446px; padding-right:45px; background: url("../images/small_q.png") no-repeat scroll bottom right;padding-bottom:15px;min-height:65px}
+textarea{font-family:Helvetica,Arial,sans-serif; font-size:90%;padding:10px}
 .clear{clear:both;}
 
 
@@ -126,3 +127,13 @@ figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
     position:absolute;
 }
 
+#paging{
+	overflow:hidden; 
+	font-size:80%;
+	line-height:20px;
+	vertical-align:baseline;
+}
+#paging ol{width:620px; text-align:center;}
+#paging li{display:inline}
+
+#wind{position:absolute;top:210px; font-size:70%}
