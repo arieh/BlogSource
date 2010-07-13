@@ -34,6 +34,7 @@ class TagsController extends AbstractSubController{
         $this->view->assign('tag',$tag);
         $this->view->assign('posts',$tags->getPosts());
         $this->view->assign('start',$start);
+        $this->view->assign('count',$tags->getCount());
         
         $this->folder .='/open';
         $this->title = $tag['name'] . " :: Tags";

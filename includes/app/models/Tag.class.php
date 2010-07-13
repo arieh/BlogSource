@@ -63,6 +63,7 @@ class Tag extends AbstractModel{
             );
         }
         $this->_posts = $posts;
+        $this->_count = $this->db->count('posts_has_tags',array('tags_id'=>$data[0]['id']));
     }
     
     private function doesTagExists($tag){
