@@ -152,7 +152,7 @@ class Post extends AbstractModel{
     }
     
     private function generateName($title){
-        $title = preg_replace('/([^a-zA-Z0-9]+)/i','',$title);
+        $title = preg_replace('/([^a-zA-Z0-9 ]+)/i','',$title);
         $title = strtolower(str_replace(' ','-',$title));
         $i=0;
         $name = $title;
