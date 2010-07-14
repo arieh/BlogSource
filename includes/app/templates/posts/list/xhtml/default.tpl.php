@@ -2,9 +2,10 @@
     Javascript, Mootools, PHP, HTML and more
 </header>
 
-<div id='article-list'>
+<ol id='article-list'>
 <?php foreach ($this->posts as $post):?>
-    <article class='post box'>
+  <li class='post box'>
+    <article>
         <header>
             <h1><a href='posts/open/<?php echo $post['name'];?>'><?php echo $post['title']?></a></h1>
         </header>
@@ -15,8 +16,9 @@
             <small>Comments: <?php echo $post['comments']?></small>
         </footer>
     </article>
+  </li>
 <?php endforeach;?>
-</div>
+</ol>
 
 <aside id='tag-list' class='box dark'>
     <header>

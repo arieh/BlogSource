@@ -1,7 +1,9 @@
 <header>
 <h1><a href='tags/open/<?php echo $this->tag['name']?>'><?php echo $this->tag['name']?></a></h1>
 </header>
+<ol>
 <?php foreach ($this->posts as $post):?>
+  <li>
     <article class='post box'>
         <header>
             <h1><a href='posts/open/<?php echo $post['name'];?>'><?php echo $post['title']?></a></h1>
@@ -10,8 +12,9 @@
                 <p><?php echo $post['summary']?></p>
             </blockquote>
     </article>
+  </li>
 <?php endforeach;?>
-
+</ol>
 <?php if ($this->count>10):?>
 <aside id='paging'>
 <?php if ($this->start>=10){
