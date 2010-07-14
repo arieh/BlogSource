@@ -26,6 +26,8 @@ dd{margin-left:25px;}
 #content ul {list-style:disc}
 #content li {margin-bottom:5px;}
 
+#content blockquote ol, #content blockquote ul{padding-right:45px; padding-left:15px; width:620px}
+
 #info{margin:15px;overflow:hidden;height:45px; position:absolute; top:115px; width:904px; left:0}
 #info ul{width:auto; padding:0;}
 #info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:220px;text-align:right}

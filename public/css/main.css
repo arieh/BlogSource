@@ -12,11 +12,11 @@ p,ul,ol{margin-bottom:20px;}
 p{width:700px;}
 small {color:#4E4E4E; font-size:0.9em;}
 abbr[title] {border-bottom:1px dashed;cursor:help}
-blockquote + p>cite{display:block;text-align:right;}
 blockquote{padding-left:80px;background: url("../images/q.png") no-repeat scroll 5px -10px; min-height:80px;font-size:90%}
-blockquote p {width:446px; padding-right:45px; background: url("../images/small_q.png") no-repeat scroll bottom right;padding-bottom:15px;min-height:65px}
+blockquote > * {width:446px; padding-right:45px; background: url("../images/small_q.png") no-repeat scroll bottom right;padding-bottom:15px;min-height:65px}
 textarea{font-family:Helvetica,Arial,sans-serif; font-size:90%;padding:10px}
 sup{font-size:70%; vertical-align:top;}
+blockquote+cite{display:block;text-align:right; margin-right:120px}
 .clear{clear:both;}
 
 
