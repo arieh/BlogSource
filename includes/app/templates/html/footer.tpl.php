@@ -5,6 +5,12 @@
     <div id="clouds_s"></div>
     <div id="clouds_l"></div>
 </div>
+<?php if ($this->action == 'posts-open'):?>
+<!-- AddThis Button BEGIN -->
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=ariehblog"></script>
+<!-- AddThis Button END -->
+<?php endif;?>
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js'></script>
 <?php
 if ($this->online):

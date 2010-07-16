@@ -96,6 +96,7 @@ class PostsController extends AbstractSubController{
         $this->view->assign('post',$post);
         $this->view->assign('tags',$tags);
         $this->view->assign('comments',$comments);
+        $this->view->assign('action','posts-open');
         
         $this->folder .='/open';
         $this->title = $post['title'];

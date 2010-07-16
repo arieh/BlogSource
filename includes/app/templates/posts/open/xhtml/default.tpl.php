@@ -14,6 +14,10 @@
         <li><a href='tags/<?php echo urlencode($tag['name'])?>'><?php echo $tag['name']?></a></li>
     <?php endforeach;?>
     </ul>
+    <p class='share'>
+        <a class="addthis_button" href="http://addthis.com/bookmark.php?v=250&amp;username=ariehblog">
+            <img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" /></a>
+    </p>
 </aside>
 </article>
 

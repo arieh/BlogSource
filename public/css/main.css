@@ -7,6 +7,7 @@ p,blockquote,li{text-align:justify;line-height:20px;}
 iframe{border:inset 2px;}
 a,a:visited{text-decoration:none;color:#00f}
 a:hover{text-decoration:underline;}
+a img{border:0}
 label{display:block;}
 p,ul,ol{margin-bottom:20px;}
 p{width:700px;}
@@ -17,6 +18,8 @@ blockquote > * {width:446px; padding-right:45px; background: url("../images/smal
 textarea{font-family:Helvetica,Arial,sans-serif; font-size:90%;padding:10px}
 sup{font-size:70%; vertical-align:top;}
 blockquote+cite{display:block;text-align:right; margin-right:120px}
+dt:after{content:':'}
+dd{width:655px; text-align:justify; margin-bottom:10px;}
 .clear{clear:both;}
 
 

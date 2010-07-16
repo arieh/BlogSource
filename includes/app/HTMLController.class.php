@@ -16,17 +16,15 @@ class HTMLController{
         $this->router = $router;
         $this->view = $view;
         $this->db = ($db) ?  $db  : new PancakeTF_PDOAccess;
+        
+        $this->view->assign('action','posts-list');
+        
         $this->getSubController();
         
         $this->setCSS();
         
         $this->setJS();
         $user = new User;
-        
-        if (!$user->isLoggedIn()){
-            $handler = new KeyHandler(new MatkonDba);
-            $this->view->assign('key_handler',$handler);
-        }
         
         $this->view->assign('css',$this->css);
         $this->view->assign('js',$this->js);
