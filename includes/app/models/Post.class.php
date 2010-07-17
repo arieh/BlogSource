@@ -118,10 +118,15 @@ class Post extends AbstractModel{
         $content = str_replace ("<br />",'',$content);
         $summary = htmlentities($this->getOption('summary'));
         $tags = $this->getOption('tags');
-        $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`non-html`,`summary`,`js`,`css`,`created`) VALUES(?,?,?,?,?,?,?,NOW())";
-        $this->db->update($sql,array($name,$title,$content,strip_tags($content),$summary,$js,$css));
-        $this->id = $this->db->getLastId();
-        $this->insertTags($this->id,explode(',',$tags));
+        $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`summary`,`js`,`css`,`created`) VALUES(?,?,?,?,?,?,?,NOW())";
+        $this->db->update($sql,array($name,$title,$content,$summary,$js,$css));
+       
+        $this->_id = $this->db->getLastId();
+        
+        $sql = "INSERT INTO `posts_search` (`id`,`summary`,`nohtml`) VALUES(?,?,?)";
+        $this->db->update($sql,array($this->_id,$summary,strip_tags($content)));
+        
+        $this->insertTags($this->_id,explode(',',$tags));
     }
     
     protected function update(){
@@ -140,6 +145,10 @@ class Post extends AbstractModel{
         $sql = "UPDATE `posts` SET `title`=?,`content`=?,`summary`=? WHERE `id`=?";
         
         $this->db->update($sql,array($title,$content,$summary,$id));
+        
+        $sql = "UPDATE `posts_search` SET `nohtml`=?,`summary`=? WHERE `id`=?";
+        $this->db->update($sql,array($summary,strip_tags($content),$id));
+        
         $this->emptyTags($id);
         $this->insertTags($id,explode(',',$tags));
     }

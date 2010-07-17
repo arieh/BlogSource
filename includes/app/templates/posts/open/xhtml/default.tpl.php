@@ -8,16 +8,18 @@
     <?php if ($this->post['updated']):?>
         <p><dfn>Updated On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['updated'])?>'><?php echo date('D, M d Y',$this->post['updated'])?></time></p>
     <?php endif;?>
-    <h3>Tags:</h3>
-    <ul class='tags'>
-    <?php foreach ($this->tags as $tag):?>
-        <li><a href='tags/<?php echo urlencode($tag['name'])?>'><?php echo $tag['name']?></a></li>
-    <?php endforeach;?>
-    </ul>
-    <p class='share'>
+    <nav class='tags' title='tags list'>
+        <h3>Tags:</h3>
+        <ul>
+        <?php foreach ($this->tags as $tag):?>
+            <li><a href='tags/<?php echo urlencode($tag['name'])?>' title='posts list under the tag: <?php echo $tag['name'];?>'><?php echo $tag['name']?></a></li>
+        <?php endforeach;?>
+        </ul>
+    </nav>
+    <nav class='share' title='sharing navigation'>
         <a class="addthis_button" href="http://addthis.com/bookmark.php?v=250&amp;username=ariehblog">
             <img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" /></a>
-    </p>
+    </nav>
 </aside>
 </article>
 

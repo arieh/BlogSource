@@ -1,0 +1,10 @@
+#main > header h1{font-size:3em;text-align:center;}
+
+.post{
+	width:620px;
+	margin:0 auto 15px;
+}
+
+aside{overflow:hidden}
+
+aside p{float:right; font-size:80%; color:#777; width:220px}

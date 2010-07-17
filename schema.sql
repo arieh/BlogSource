@@ -1,89 +1,68 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+/*
+MySQL Data Transfer
+Source Host: localhost
+Source Database: blog
+Target Host: localhost
+Target Database: blog
+Date: 15/07/2010 08:58:22
+*/
 
-DROP SCHEMA IF EXISTS `blog` ;
-CREATE SCHEMA IF NOT EXISTS `blog` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
-USE `blog` ;
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for comments
+-- ----------------------------
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `content` text CHARACTER SET latin1,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `posts_id` int(11) NOT NULL,
+  `created` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`,`posts_id`),
+  KEY `fk_comments_posts` (`posts_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- -----------------------------------------------------
--- Table `blog`.`posts`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `blog`.`posts` ;
+-- ----------------------------
+-- Table structure for posts
+-- ----------------------------
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `title` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `content` text COLLATE utf8_bin,
+  `created` timestamp NULL DEFAULT NULL,
+  `updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `summary` varchar(1000) COLLATE utf8_bin NOT NULL,
+  `non-html` text COLLATE utf8_bin,
+  `js` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `css` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dir` tinyint(2) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`,`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-CREATE  TABLE IF NOT EXISTS `blog`.`posts` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `name` VARCHAR(255) NOT NULL ,
-  `title` VARCHAR(255) NULL ,
-  `content` TEXT NULL ,
-  `created` TIMESTAMP NULL ,
-  `updated` TIMESTAMP NULL ,
-  PRIMARY KEY (`id`, `name`) )
-ENGINE = InnoDB;
+-- ----------------------------
+-- Table structure for posts_has_tags
+-- ----------------------------
+DROP TABLE IF EXISTS `posts_has_tags`;
+CREATE TABLE `posts_has_tags` (
+  `posts_id` int(11) NOT NULL,
+  `tags_id` int(11) NOT NULL,
+  PRIMARY KEY (`posts_id`,`tags_id`),
+  KEY `fk_posts_has_tags_posts1` (`posts_id`),
+  KEY `fk_posts_has_tags_tags1` (`tags_id`),
+  CONSTRAINT `fk_posts_has_tags_posts1` FOREIGN KEY (`posts_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_posts_has_tags_tags1` FOREIGN KEY (`tags_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-
--- -----------------------------------------------------
--- Table `blog`.`comments`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `blog`.`comments` ;
-
-CREATE  TABLE IF NOT EXISTS `blog`.`comments` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `title` VARCHAR(255) NULL ,
-  `name` VARCHAR(255) NULL ,
-  `content` TEXT NULL ,
-  `email` VARCHAR(255) NULL ,
-  `posts_id` INT NOT NULL ,
-  PRIMARY KEY (`id`, `posts_id`) ,
-  CONSTRAINT `fk_comments_posts`
-    FOREIGN KEY (`posts_id` )
-    REFERENCES `blog`.`posts` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_comments_posts` ON `blog`.`comments` (`posts_id` ASC) ;
-
-
--- -----------------------------------------------------
--- Table `blog`.`tags`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `blog`.`tags` ;
-
-CREATE  TABLE IF NOT EXISTS `blog`.`tags` (
-  `id` INT NOT NULL ,
-  `name` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id`, `name`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `blog`.`posts_has_tags`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `blog`.`posts_has_tags` ;
-
-CREATE  TABLE IF NOT EXISTS `blog`.`posts_has_tags` (
-  `posts_id` INT NOT NULL ,
-  `tags_id` INT NOT NULL ,
-  PRIMARY KEY (`posts_id`, `tags_id`) ,
-  CONSTRAINT `fk_posts_has_tags_posts1`
-    FOREIGN KEY (`posts_id` )
-    REFERENCES `blog`.`posts` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_posts_has_tags_tags1`
-    FOREIGN KEY (`tags_id` )
-    REFERENCES `blog`.`tags` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_posts_has_tags_posts1` ON `blog`.`posts_has_tags` (`posts_id` ASC) ;
-
-CREATE INDEX `fk_posts_has_tags_tags1` ON `blog`.`posts_has_tags` (`tags_id` ASC) ;
-
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- ----------------------------
+-- Table structure for tags
+-- ----------------------------
+DROP TABLE IF EXISTS `tags`;
+CREATE TABLE `tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`id`,`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

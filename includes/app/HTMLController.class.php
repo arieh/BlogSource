@@ -40,6 +40,9 @@ class HTMLController{
     public function getSubController(){
         $sub_controller = false;
         switch ($this->router->getFolder(0)){
+            case 'search':
+                $sub_controller = new SearchController($this->router,$this->view);
+            break;
             case 'tags':
                 $sub_controller = new TagsController($this->router,$this->view);
             break;
