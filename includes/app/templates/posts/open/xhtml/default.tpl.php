@@ -4,9 +4,9 @@
 </header>
 <?php echo $this->post['content']?>
 <aside id='info'>
-    <p><dfn>Created On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['created'])?>'><?php echo date('D, M d Y',$this->post['created'])?></time></p>
+    <p><dfn>Created On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['created'])?>'><?php echo date('D, M d Y  H:i',$this->post['created'])?></time></p>
     <?php if ($this->post['updated']):?>
-        <p><dfn>Updated On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['updated'])?>'><?php echo date('D, M d Y',$this->post['updated'])?></time></p>
+        <p><dfn>Updated On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['updated'])?>'><?php echo date('D, M d Y  H:i',$this->post['updated'])?></time></p>
     <?php endif;?>
     <nav class='tags' title='tags list'>
         <h3>Tags:</h3>

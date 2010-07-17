@@ -30,7 +30,7 @@ dd{margin-left:25px;}
 
 #info{margin:15px;overflow:hidden;height:85px; position:absolute; top:115px; width:904px; left:0}
 #info ul{width:auto; padding:0;float:left; margin:0;}
-#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:220px;text-align:right}
+#info p{color:#4E4E4E; font-size:0.8em;float:right;padding:0 5px 0 10px; width:230px;text-align:right}
 #info .tags a{text-decoration:underline;}
 #info h3{font-weight:normal; font-size:0.9em; margin-top:0; line-height:20px; vertical-align:baseline; margin-bottom:0}
 #info .share{width:123px; clear:both; height:16px; line-height:16px; margin:0; padding:3px; float:right}
