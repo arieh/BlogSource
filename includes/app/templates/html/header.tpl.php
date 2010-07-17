@@ -3,7 +3,7 @@
 <title><?php echo implode(' :: ',$this->titles);?></title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="google-site-verification" content="BGnm02T2G_Ld6zdRRLjglg3V4BvswH4_p3eLLQMoDz8" />
-	<meta name="description" content='<?php echo $this->description;?>' />
+	<meta name="description" content="<?php echo str_replace('"','\"',$this->description);?>" />
     <?php
      if ($this->online):
         $src = $this->cdn . "b=css&amp;f=";
@@ -50,6 +50,20 @@
         font-family: 'Lobster1.3Regular';
     }
     </style>
+    <?php if (!$this->user->isAdmin()):?>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-16183012-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
+    <?php endif;?>
 </head>
 <body>
 

@@ -100,7 +100,7 @@ class PostsController extends AbstractSubController{
         
         $this->folder .='/open';
         $this->title = $post['title'];
-        $this->descriptin = $post['summary'];
+        $this->description = $post['summary'];
         
         $this->css[] = 'posts';
         $this->css[]='highlighter';
