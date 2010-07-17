@@ -89,6 +89,8 @@ h3{font-size:1.2em;}
     background:#e5e5e5;	
 }
 
+#search{position:absolute;right:0;bottom:0}
+
 #subs{text-align:center; font-size:1.5em; margin-bottom:10px; height:30px;}
 
 body > footer{width:auto;background:url(../images/grass2.gif); height:40px; margin-top:30px; bottom:0}

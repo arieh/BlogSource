@@ -1,8 +1,8 @@
 <?php
 class HTMLController{
-    private $css = array('reset','main');
+    private $css = array('reset','main_1');
     
-    private $js = array('main');
+    private $js = array('main_1','placeholder-min');
     
     private $titles = array('Arieh.co.il');
     

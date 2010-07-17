@@ -17,6 +17,9 @@ class SearchController extends AbstractSubController{
     
     protected function posts(){
         $value = $this->router->getFolder(1);
+        
+        if (!$value) $value = $this->router->getParam('value');
+        
         $start = $this->router->getFolder(2);
         $model = new Search(array('value'=>$value,'start'=>$start));
         $model->execute();

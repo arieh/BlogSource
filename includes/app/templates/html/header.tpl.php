@@ -58,6 +58,12 @@
 </nav>
 <header>
     <h1>
-        <a href='<?php echo $this->base_path;?>'>Arieh<span>.co.il</span></a>
+        <a tabindex="2" href='<?php echo $this->base_path;?>'>Arieh<span>.co.il</span></a>
     </h1>
+    <form id='search' action='search' method='post'>
+        <fieldset>
+            <input type='text' placeholder='search posts' id='search_value' name='value' tabindex="3" />
+            <input type='submit' value='Search' />
+        </fieldset>
+    </form>
 </header>

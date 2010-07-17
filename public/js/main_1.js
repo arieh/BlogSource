@@ -9,7 +9,8 @@ var small = $('clouds_s')
 	, toggle_contact = false
 	, stopped = false
 	, wind = new Element('span',{id:'wind',title:'toggle (on/off) wind effect'}).inject($$('body>header')[0]).appendText('Toggle Wind')
-	, handle;
+	, handle
+	, search_value = $('search_value');
 
 function exactPeriodical(callback,timeout){
 	var start = new Date().getTime()
@@ -62,4 +63,18 @@ wind.addEvent('click',function(){
 		stopped = true;
 	}
 });
+
+
+
+new NS.Placeholder({
+    elements: search_value,
+    color: '#666'
+});
+
+$('search').addEvent('submit',function(){
+	if (search_value.value) 
+		window.location = base_path + 'search/'+search_value.value;
+	return false;
+});
+
 });
