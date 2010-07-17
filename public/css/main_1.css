@@ -90,6 +90,7 @@ h3{font-size:1.2em;}
 }
 
 #search{position:absolute;right:0;bottom:0}
+label[for=search_value]{width:40px; overflow:hidden; text-indent:-100px;}
 
 #subs{text-align:center; font-size:1.5em; margin-bottom:10px; height:30px;}
 

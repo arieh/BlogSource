@@ -62,7 +62,7 @@
     </h1>
     <form id='search' action='search' method='post'>
         <fieldset>
-            <input type='text' placeholder='search posts' id='search_value' name='value' tabindex="3" />
+            <label for='search_value'>Search:</label><input type='text' placeholder='search posts' id='search_value' name='value' tabindex="3" />
             <input type='submit' value='Search' />
         </fieldset>
     </form>
