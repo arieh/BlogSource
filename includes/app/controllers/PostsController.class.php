@@ -170,7 +170,7 @@ class PostsController extends AbstractSubController{
     protected function comment(){
         $id = $this->router->getFolder(3);
         
-        if (!$id) $this->listAll();
+        if (!$id) $this->goHome();
         switch ($this->router->getFolder(2)){
             case 'new':
                 $opt = $this->router->comment;
@@ -185,7 +185,7 @@ class PostsController extends AbstractSubController{
                         $this->listAll();
                     }
                 }
-                $this->open($id);
+                header('Location:'.$this->view->base_path.'posts/open/'.$id);
             break;
             
             case 'delete':
@@ -197,9 +197,10 @@ class PostsController extends AbstractSubController{
                 $id = $this->router->getFolder(3);
                 $comment = new Comment(array('action'=>'delete','id'=>$id));
                 $comment->execute();
-                
+                $this->goHome();
+            break;
             default:
-                $this->listAll();
+                $this->goHome();
         }
     }
     

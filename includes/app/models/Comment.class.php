@@ -39,7 +39,7 @@ class Comment extends AbstractModel{
         
         $pattern = '/(\\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/iu';
         
-        $content = preg_replace($pattern,'<a href="$1" rel="nofollow">$1</a>',$content);
+        $content = preg_replace($pattern,'<a href="$1" rel="nofollow" target="_blank">$1</a>',$content);
         $content = "<p>".str_replace("\n","</p><p>",$content)."</p>";
         $sql = "INSERT INTO `comments`(`title`,`name`,`email`,`content`,`posts_id`,`created`) VALUES(?,?,?,?,?,NOW())";
         $this->db->update($sql,array($title,$name,$email,$content,$post));
