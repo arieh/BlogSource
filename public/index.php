@@ -1,6 +1,7 @@
 <?php
 require_once 'autoloader.php';
 require_once 'paths.php';
+date_default_timezone_set('Asia/Jerusalem');
 ob_start();
 session_start();
 session_regenerate_id();
