@@ -34,7 +34,9 @@
     </header>
 
     <?php if ($this->comments):?>
-        <?php foreach($this->comments as $comment):?>
+    <ol>
+    <?php foreach($this->comments as $comment):?>
+        <li>
         <article class='comment box' id='cmt<?php echo $comment['id']?>'>
             <header>
                 <?php
@@ -52,7 +54,9 @@
                 <a href='posts/comment/delete/<?php echo $comment['id'];?>'>delete</a>
             <?php endif;?>
         </article>
-        <?php endforeach;?>
+        </li>
+    <?php endforeach;?>
+    </ol>
     <?php endif;?>
     
     <form id='new-comment' action='posts/comment/new/<?php echo $this->post['id']?>' method='post' class='box comment'>
