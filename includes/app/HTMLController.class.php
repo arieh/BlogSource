@@ -18,7 +18,7 @@ class HTMLController{
         $this->db = ($db) ?  $db  : new PancakeTF_PDOAccess;
         
         $this->view->assign('action','posts-list');
-        
+        $this->view->assign('nojs',false);
         $this->getSubController();
         
         $this->setCSS();
