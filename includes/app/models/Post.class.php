@@ -118,7 +118,7 @@ class Post extends AbstractModel{
         $content = str_replace ("<br />",'',$content);
         $summary = htmlentities($this->getOption('summary'));
         $tags = $this->getOption('tags');
-        $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`summary`,`js`,`css`,`created`) VALUES(?,?,?,?,?,?,?,NOW())";
+        $sql = "INSERT INTO `posts` (`name`,`title`,`content`,`summary`,`js`,`css`,`created`) VALUES(?,?,?,?,?,?,NOW())";
         $this->db->update($sql,array($name,$title,$content,$summary,$js,$css));
        
         $this->_id = $this->db->getLastId();
