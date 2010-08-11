@@ -20,7 +20,7 @@ abstract class AbstractSubController{
     protected $folder = '';
     
     protected $template;
-    
+
     public function __construct(Router $router, Savant3 $savant, $env = 'xhtml'){
         $this->router = $router;
         $this->view   = $savant;
@@ -57,8 +57,8 @@ abstract class AbstractSubController{
      protected function fetchTemplate($name){
          $file = dirname(__FILE__) . '/../templates/' . $this->folder . '/' . $this->env . "/$name.tpl.php";
          if (file_exists($file)){
-             return $this->view->fetch($this->folder . "/{$this->env}/$name.tpl.php");
-         }else return $this->view->fetch($this->folder . "/{$this->env}/$name.tpl.php");
+             return $this->view->fetch($this->folder . $this->env."/".$name.".tpl.php");
+         }else return $this->view->fetch($this->folder . $this->env."/".$name.".tpl.php");
      }
      
      protected function goHome(){
