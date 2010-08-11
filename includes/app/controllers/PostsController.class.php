@@ -52,6 +52,7 @@ class PostsController extends AbstractSubController{
             
             if ($post) $this->view->assign('post',$post);
             else $this->view->assign('post',false);
+            $this->view->assign('nojs',true);
         }else $this->goHome();
     }
     
@@ -64,7 +65,6 @@ class PostsController extends AbstractSubController{
             $post->execute();
             
             if ($post->isError()){
-                FB::log($post);
                 $this->newPost($post);
             }else{
                 header('Location:'.$this->view->base_path.'posts/open/'.$post->getName());
