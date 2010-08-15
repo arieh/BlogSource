@@ -12,6 +12,10 @@ class HTMLController{
     
     private $sub_controller = false;
     
+    private $css_token = '1';
+    
+    private $js_token = '2';
+    
     public function __construct(Router $router, Savant3 $view, PancakeTF_DBAccessI $db=null, $online=true){
         $this->router = $router;
         $this->view = $view;
@@ -27,7 +31,9 @@ class HTMLController{
         $user = new User;
         
         $this->view->assign('css',$this->css);
+        $this->view->assign('css_token',$this->css_token);
         $this->view->assign('js',$this->js);
+        $this->view->assign('js_token',$this->js_token);
         $this->view->assign('titles',$this->titles);
         $this->view->assign('description',$this->desc);
         $this->view->assign('sub_controller',$this->sub_controller);

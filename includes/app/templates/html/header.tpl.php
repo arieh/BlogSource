@@ -13,7 +13,7 @@
             $sep=',';
         }
     ?>
-    <link rel='stylesheet' type='text/css' href='<?php echo $src;?>' />
+    <link rel='stylesheet' type='text/css' href='<?php echo $src."?tk=".$this->js_token;?>' />
     <?php else:?>
        <?php foreach($this->css as $name):?>
            <link rel='stylesheet' type='text/css' href='<?php echo $this->base_path . "css/$name.css";?>' />

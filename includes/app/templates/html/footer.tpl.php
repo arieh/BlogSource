@@ -22,7 +22,7 @@
             $src .=$sep.$name.'.js';
             $sep=',';
         }?>
-        <script type='text/javascript' src='<?php echo $src;?>'></script>
+        <script type='text/javascript' src='<?php echo $src."?tk=".$this->js_token;?>'></script>
     <?php else:?>
         <?php foreach ($this->js as $name):?>
             <script type='text/javascript' src='<?php echo $this->base_path . "js/$name.js";?>'></script>
