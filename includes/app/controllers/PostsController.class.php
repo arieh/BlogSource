@@ -25,9 +25,13 @@ class PostsController extends AbstractSubController{
     private $title = 'Posts';
     private $description = 'A list of all posts';
     
+    public function __construct(Router $router, Savant3 $savant, $env = 'xhtml'){
+    	parent::__construct($router,$savant,$env);
+    	if ('list'==$this->action && $router->p) $this->action = 'open';
+    }
     
     protected function listAll(){
-        if ($start = $this->router->getFolder(2)) $options = array('start'=>(int)$start);
+    	if ($start = $this->router->getFolder(2)) $options = array('start'=>(int)$start);
         else $options = array();
         $post = new Post($options);
         $post->execute();
@@ -67,13 +71,26 @@ class PostsController extends AbstractSubController{
             if ($post->isError()){
                 $this->newPost($post);
             }else{
-                header('Location:'.$this->view->base_path.'posts/open/'.$post->getName());
+               global $paths;
+                $Twitter = Twitter::getInstance();
+                $t_login = $Twitter->setUser('arglazer','trhv1dkzr');
+                if (true === $t_login){
+                    $res = $Twitter->post("I've published a new post at my blog - "
+                                    .$paths[0]."?p=".$post->getId()
+                                    .' - ' . $options['title']
+                    );
+                    if (true === $res) header('Location:'.$this->view->base_path.'posts/open/'.$post->getName());
+                    else echo $res;
+                }else echo $t_login;
             }
         }else $this->folder .='/list';
+        
     }
     
     protected function open($id=false){
-        $options = array('action'=>'open','id'=>$id);
+        $id = $id ? $id : $this->router->p;
+    	
+    	$options = array('action'=>'open','id'=>$id);
         
         if (!$id){
             $value = $this->router->getFolder(2);
