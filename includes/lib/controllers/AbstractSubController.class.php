@@ -127,6 +127,12 @@ abstract class AbstractSubController{
      }
      
      /**
+      * returns the current set action
+      * @return string
+      */
+     public function getAction(){return $this->action;}
+     
+     /**
       * redirects the page within the site
       * @param string $path a path within the site
       */

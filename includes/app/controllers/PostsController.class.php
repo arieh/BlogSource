@@ -27,7 +27,7 @@ class PostsController extends AbstractSubController{
     
     public function __construct(Router $router, Savant3 $savant, $env = 'xhtml'){
     	parent::__construct($router,$savant,$env);
-    	if ('list'==$this->action && $router->p) $this->action = 'open';
+    	if ('list'==$this->getAction() && $router->p) $this->action = 'open';
     }
     
     protected function listAll(){
