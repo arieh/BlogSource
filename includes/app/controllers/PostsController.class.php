@@ -79,7 +79,7 @@ class PostsController extends AbstractSubController{
                                     .$paths[0]."?p=".$post->getId()
                                     .' - ' . $options['title']
                     );
-                    if (true === $res) header('Location:'.$this->view->base_path.'posts/open/'.$post->getName());
+                    if (true === $res) $this->redirect('posts/open/'.$post->getName());
                     else echo $res;
                 }else echo $t_login;
             }
