@@ -33,6 +33,7 @@ class Post extends AbstractModel{
         if (!$start || !is_numeric($start) || $start<0) $start = 0;
         
         $sql = "SELECT `posts`.*
+                       ,UNIX_TIMESTAMP(`created`) as `created`
                 FROM
                     posts
                 ORDER BY `posts`.`created` DESC

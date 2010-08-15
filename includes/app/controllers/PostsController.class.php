@@ -44,14 +44,12 @@ class PostsController extends AbstractSubController{
         $this->view->assign('tags',$tags->getTags());
         $this->view->assign('start',$post->getOption('start'));
         $this->view->assign('main',true);
-        
         $this->folder .='/list';
     }
     
     protected function newPost($post=null){
         if ($this->user->isAdmin()){
             $this->folder .= '/new';
-            //$this->view->assign('tinymce',true);
             $this->css[]='new';
             
             if ($post) $this->view->assign('post',$post);
@@ -89,7 +87,6 @@ class PostsController extends AbstractSubController{
     
     protected function open($id=false){
         $id = $id ? $id : $this->router->p;
-    	
     	$options = array('action'=>'open','id'=>$id);
         
         if (!$id){

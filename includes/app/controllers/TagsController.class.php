@@ -22,7 +22,6 @@ class TagsController extends AbstractSubController{
         $start = $this->router->getFolder(2+$add);
         
         if (!$start) $start = 0;
-        
         $tags = new Tag(array('action'=>'open','name'=>$name,'start'=>$start));
         $tags->execute();
         

@@ -26,16 +26,16 @@
         </style>
     <![endif]-->
     <base href="<?php echo $this->base_path;?>" />
-    <link rel="alternate" type="application/rss+xml" href="/rss/" title="Posts RSS Feed">
+    <link rel="alternate" type="application/rss+xml" href="rss/" title="Posts RSS Feed">
     <?php if (isset($this->tag) && $this->tag):?>
-        <link rel="alternate" type="application/rss+xml" href="/rss/tags/<?php echo $this->tag['name']?>" title="Tag:<?php echo $this->tag['name']?> RSS Feed">
+        <link rel="alternate" type="application/rss+xml" href="rss/tags/<?php echo $this->tag['name']?>" title="Tag:<?php echo $this->tag['name']?> RSS Feed">
     <?php endif;?>
     <!--[if IE]>
     <link rel='stylesheet' type='text/css' href='<?php echo $this->base_path;?>css/ie.css' />
     <script type='text/javascript' src="js/html5.js"></script>
     <![endif]-->
     <?php if (isset($this->post) && $this->post):?>
-        <link rel="alternate" type="application/rss+xml" href="/rss/posts/open/<?php echo $this->post['name']?>" title="Post Comments RSS Feed">
+        <link rel="alternate" type="application/rss+xml" href="rss/posts/open/<?php echo $this->post['name']?>" title="Post Comments RSS Feed">
     <?php endif;?>
     <style type="text/css">
     @font-face {

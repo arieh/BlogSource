@@ -39,13 +39,14 @@ class Tag extends AbstractModel{
                     posts.summary as p_summary
                 FROM
                     tags
-                Inner Join posts_has_tags ON tags.id = posts_has_tags.tags_id
-                Inner Join posts ON posts_has_tags.posts_id = posts.id
+                Left Join posts_has_tags ON tags.id = posts_has_tags.tags_id
+                Left Join posts ON posts_has_tags.posts_id = posts.id
                 WHERE LCASE(tags.name) = ?
                 ORDER BY posts.created DESC
                 LIMIT $start,10";
         
         $data = $this->db->queryArray($sql,array(strtolower($name)));
+
         $this->_tags[] = array(
             'id'=>$data[0]['id']
             ,'name'=>$data[0]['name']
@@ -55,7 +56,8 @@ class Tag extends AbstractModel{
         $posts = array();
         
         foreach ($data as $row){
-            $posts[]= array(
+            if (!$row['p_title']) break;
+        	$posts[]= array(
                 'id'=>$row['p_id']
                 ,'name'=>$row['p_name']
                 ,'title'=>$row['p_title']

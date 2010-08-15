@@ -12,9 +12,9 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
     <title>Arieh.co.il - <?php echo $this->post['title'];?> Comments Feed</title>
     <link>http://blog.arieh.co.il/posts/open/<?php echo $this->post['name']?></link>
     <description>A list comments for the post: <?php echo $this->post['title']?></description>
-    <lastBuildDate><?php echo date('r',$this->posts[0]['created'])?></lastBuildDate>
+    <lastBuildDate><?php echo date('r',$this->post['created'])?></lastBuildDate>
     <language>en-us</language>
-    <?php foreach ($this->commentss as $comment):?>
+    <?php foreach ($this->comments as $comment):?>
     <item>
         <title><?php echo $comment['title']?></title>
         <link><?php echo $this->base_path . 'posts/open/'.$this->post['name']."#cmt".$comment['id']?></link>
