@@ -77,8 +77,8 @@ abstract class AbstractSubController{
       * executes the current action
       */
      public function execute(){
-         $action = $this->actions[$this->action];
-         $this->{$action}();
+     	$action = $this->actions[$this->action];
+        $this->{$action}();
      }
      
 
@@ -166,11 +166,9 @@ abstract class AbstractSubController{
      protected function chooseAction(){
         $temp_action = $this->router->getFolder(1);
         
-        
         if ($this->env !='xhtml'){
             $env_action_folder = $this->env."_actions";
             $env_def_action = $this->env."_default_action";
-            
             if (isset($this->$env_action_folder) && in_array($temp_action,$this->$env_action_folder)){
                 $this->action = $temp_action;
             }elseif (isset($this->$env_def_action)) $this->action = $this->$env_def_action;
