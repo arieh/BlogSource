@@ -8,6 +8,7 @@
     <?php if ($this->post['updated']):?>
         <p><dfn>Updated On: </dfn><time datetime='<?php echo date('Y-m-d',$this->post['updated'])?>'><?php echo date('D, M d Y  H:i',$this->post['updated'])?></time></p>
     <?php endif;?>
+    
     <nav class='tags' title='tags list'>
         <h3>Tags:</h3>
         <ul>
@@ -20,6 +21,7 @@
         <a class="addthis_button" href="http://addthis.com/bookmark.php?v=250&amp;username=ariehblog">
             <img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" /></a>
     </nav>
+    <p class='short'><a href="?p=<?php echo $this->post['id'];?>">short url</a></p>
 </aside>
 </article>
 
