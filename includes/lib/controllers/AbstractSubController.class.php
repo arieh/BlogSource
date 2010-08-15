@@ -26,7 +26,6 @@ abstract class AbstractSubController{
         $this->view   = $savant;
         $this->user   = new User;
         $this->env    = $env;
-        $this->view->assign('tinymce',false);
         $this->chooseAction();
      }
      
@@ -57,8 +56,8 @@ abstract class AbstractSubController{
      protected function fetchTemplate($name){
          $file = dirname(__FILE__) . '/../templates/' . $this->folder . '/' . $this->env . "/$name.tpl.php";
          if (file_exists($file)){
-             return $this->view->fetch($this->folder . $this->env."/".$name.".tpl.php");
-         }else return $this->view->fetch($this->folder . $this->env."/".$name.".tpl.php");
+             return $this->view->fetch($this->folder .'/'. $this->env."/".$name.".tpl.php");
+         }else return $this->view->fetch($this->folder .'/'. $this->env."/".$name.".tpl.php");
      }
      
      protected function goHome(){
