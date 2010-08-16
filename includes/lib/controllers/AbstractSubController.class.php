@@ -62,12 +62,12 @@ abstract class AbstractSubController{
     
     /**
      * @param Router $router
-     * @param Savant3 $savant
+     * @param TFViewI $savant
      * @param string $env
      */
-    public function __construct(Router $router, Savant3 $savant, $env = 'xhtml'){
+    public function __construct(Router $router, TFViewI $view, $env = 'xhtml'){
         $this->router = $router;
-        $this->view   = $savant;
+        $this->view   = $view;
         $this->user   = new User;
         $this->env    = $env;
         $this->chooseAction();

@@ -25,8 +25,8 @@ class PostsController extends AbstractSubController{
     private $title = 'Posts';
     private $description = 'A list of all posts';
     
-    public function __construct(Router $router, Savant3 $savant, $env = 'xhtml'){
-    	parent::__construct($router,$savant,$env);
+    public function __construct(Router $router, TFViewI $view, $env = 'xhtml'){
+    	parent::__construct($router,$view,$env);
     	if ('list'==$this->getAction() && $router->p) $this->action = 'open';
     }
     

@@ -1,7 +1,8 @@
 <?php
-if (!isset($this->posts) || !$this->posts){
+
+if (!$this->isKeySet('posts')){
    header("HTTP/1.0 404 Not Found");
-   die();
+   return;
 }
 header("Content-Type:text/xml");
 header("Encoding:utf-8");

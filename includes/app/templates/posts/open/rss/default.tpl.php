@@ -6,6 +6,7 @@ if (!isset($this->post) || !$this->post){
 header("Content-Type:text/xml");
 header("Encoding:utf-8");
 echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+
 ?>
 <rss version="2.0">
 <channel>

@@ -22,7 +22,7 @@ class HTMLController extends AbstractMainController{
     
     protected $default_controller = 'PostsController';
     
-    public function __construct(Router $router, Savant3 $view, PancakeTF_DBAccessI $db=null, $online=true){
+    public function __construct(Router $router, TFViewI $view, PancakeTF_DBAccessI $db=null, $online=true){
         $this->db = ($db) ?  $db  : new PancakeTF_PDOAccess;
         $view->assign('action','posts-list'); 
         $view->assign('nojs',false);   
