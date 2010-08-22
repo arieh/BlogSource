@@ -40,7 +40,7 @@ img{margin:10px auto;border:3px #ccc solid;display:block}
 #content ul.image-list{width:843px; vertical-align:top;list-style-type:none; padding:0}
 ul.image-list li{display:inline-block; vertical-align:top;}
 ul.image-list figure{text-align:center; margin:5px 10px;width:250px}
-figcaption{display:inline; font-size:80%}
+figcaption{display:block; font-size:80%; margin-bottom:10px;}
 
 
 .comment{width:620px; margin:0 auto 10px}
@@ -89,3 +89,20 @@ h4{font-weight:bold;}
 code{font-size:120%}
 .dp-highlighter span{font-size:110%;}
 article .dp-highlighter ol li {line-height:17px;}
+
+#content table .dp-highlighter{
+    width:365px;
+    margin:0;
+}
+
+#content table{
+    border:1px solid #ccc;
+    border-collapse: collapse;
+}
+td {border:1px solid #aaa; padding:20px; text-align:justify}
+
+code {background:#ccc; padding:0 5px; white-space: nowrap;}
+
+#content dt{margin-left:-15px; margin-bottom:10px;}
+
+#content li .dp-highlighter{width:835px;}

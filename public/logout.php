@@ -1,6 +1,6 @@
 <?php
 require_once('autoloader.php');
-require_once('paths.php');
+require_once('../config/paths.php');
 
 session_start();
 session_regenerate_id();

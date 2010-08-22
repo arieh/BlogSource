@@ -50,10 +50,10 @@
         font-family: 'Lobster1.3Regular';
     }
     </style>
-    <?php if (!$this->user->isAdmin()):?>
+    <?php if (!$this->user->isAdmin() && $this->online):?>
     <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-16183012-1']);
+      _gaq.push(['_setAccount', 'UA-17499092-1']);
       _gaq.push(['_trackPageview']);
     
       (function() {
@@ -63,6 +63,9 @@
       })();
     
     </script>
+    <?php endif;?>
+    <?php if (isset($this->post)):?>
+        <link rel="canonical" href="posts/open/<?php echo $this->post['name'];?>" />
     <?php endif;?>
 </head>
 <body>

@@ -27,7 +27,7 @@ class PostsController extends AbstractSubController{
     
     public function __construct(Router $router, TFViewI $view, $env = 'xhtml'){
     	parent::__construct($router,$view,$env);
-    	if ('list'==$this->getAction() && $router->p) $this->action = 'open';
+    	if ('list'==$this->getAction() && $router->p) $this->setAction('open');
     }
     
     protected function listAll(){
