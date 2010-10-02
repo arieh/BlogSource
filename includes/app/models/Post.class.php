@@ -28,6 +28,8 @@ class Post extends AbstractModel{
     
     protected $_name = '';
     
+    protected $_farmiliars = array();
+    
     protected function listAll(){
         $start = $this->getOption('start');
         if (!$start || !is_numeric($start) || $start<0) $start = 0;
@@ -97,6 +99,7 @@ class Post extends AbstractModel{
         $this->_posts[]=$data['post'];
         $this->_comments = $data['comments'];
         $this->_tags = $data['tags'];
+        $this->retrieveFarmiliars($data['post']['id']);
     }
     
     protected function create(){
@@ -246,5 +249,17 @@ class Post extends AbstractModel{
     
     private function emptyTags($id){
         $this->db->update("DELETE FROM `posts_has_tags` WHERE `posts_id`=?",array($id));
+    }
+    
+    private function retrieveFarmiliars($id){
+    	$sql = "SELECT posts.name,posts.id, posts.title
+                FROM posts
+                INNER JOIN posts_has_tags ON posts.id = posts_has_tags.posts_id
+                WHERE posts_has_tags.tags_id IN (
+                    SELECT `tags_id` FROM `posts_has_tags` WHERE posts_id = ?
+                )
+                AND posts.id != ?";
+    	$res = $this->db->queryArray($sql,array($id,$id)); 
+    	$this->_farmiliars = $res;
     }
 }

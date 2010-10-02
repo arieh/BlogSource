@@ -13,5 +13,15 @@ abstract class BlogTestCase extends PHPUnit_Framework_Testcase{
     protected function setUpDB(){
         PancakeTF_PDOAccess::connect('mysql','localhost','blog','root','1234');
         $this->db = new PancakeTF_PDOAccess();
+        
+        if (!$this->sql) return;
+        
+        $sql = file_get_contents(dirname(__FILE__)."/../sql/{$this->sql}.sql");
+        $sql = explode (';',$sql);
+        foreach ($sql as $stmt){
+            try{
+                $this->db->update($stmt);
+            }catch (Exception $e){}
+        }
     }
 }

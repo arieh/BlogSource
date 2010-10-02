@@ -1,9 +1,12 @@
 <?php
 require_once dirname(__FILE__) . '/../classes/BlogTestCase.php';
+require_once dirname(__FILE__) . '/../../includes/lib/models/AbstractModel.class.php';
 require_once dirname(__FILE__) . '/../../includes/app/models/Search.class.php';
 
 class SearchTest extends BlogTestCase{
-    private function setUpModel(){
+    protected $sql = 'posts_search';
+	
+	private function setUpModel(){
         $this->setUpDB();
         $this->model = new Search();
     }
@@ -15,7 +18,7 @@ class SearchTest extends BlogTestCase{
         $this->assertFalse($this->model->isError());
     }
     
-    public function testMatch(){
+    public function testSearchWordsLongerThanThree(){
         $this->setUpModel();
         $this->model->setOption('value','basics');
         $this->model->execute();
@@ -30,7 +33,7 @@ class SearchTest extends BlogTestCase{
         $this->assertEquals(2,$this->model->getCount());
     }
     
-    public function testNoMatch(){
+    public function testSearchWordsShorterThanFour(){
         $this->setUpModel();
         $this->model->setOption('value','and');
         $this->model->execute();

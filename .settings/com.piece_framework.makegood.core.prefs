@@ -1,0 +1,5 @@
+#Wed Aug 11 11:38:24 IDT 2010
+eclipse.preferences.version=1
+preload_script=
+test_folders=/blog/tests/model
+testing_framework=PHPUnit

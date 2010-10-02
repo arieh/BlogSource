@@ -12,7 +12,7 @@ class HTMLController extends AbstractMainController{
     
     protected $sub_controller = false;
     
-    private $css_token = '2';
+    private $css_token = '3';
     
     private $js_token = '2';
     

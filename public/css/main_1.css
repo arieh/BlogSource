@@ -144,3 +144,8 @@ figcaption {font-weight:bold; font-size:0.9em; margin-bottom:5px;}
 #paging li{display:inline}
 
 #wind{position:absolute;top:210px; font-size:70%; color:#00f; cursor:pointer;}
+#promote-js{
+   display:block;
+   width:150px;
+   margin:0 auto;
+}
