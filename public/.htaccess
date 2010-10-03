@@ -1,30 +1,21 @@
+AddHandler php-cgi .php
+Action php-cgi /cgi-bin/php.cgi
+
 RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.css$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.png$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.jpg$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.jpeg$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.js$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.gif$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.php$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.html$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.tar.gz$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.xml$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.xls$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.txt$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.pdf$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.htc$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.doc$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.zip$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.rar$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.xsl$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.eot$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.svg$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.ttf$
-RewriteCond %{REQUEST_FILENAME} !^(.+)\.woff$
-RewriteRule ^.*$ index.php [NC,L]
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [NC,L]
+
+<FilesMatch "^php5?\.(ini|cgi)$">
+Order Deny,Allow
+Deny from All
+Allow from env=REDIRECT_STATUS
+</FilesMatch>
+
 <IfModule mod_deflate.c>
-<FilesMatch "\.(js|css|png|jpg|jpeg|gif)$">
+<FilesMatch "\.(js|css|png|jpg|jpeg|gif|woff|html|php)$">
 SetOutputFilter DEFLATE
 </FilesMatch>
 </IfModule>
