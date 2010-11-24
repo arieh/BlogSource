@@ -69,7 +69,7 @@ class PostsController extends AbstractSubController{
             if ($post->isError()){
                 $this->newPost($post);
             }else{
-               global $paths;
+               /*global $paths;
                 $Twitter = Twitter::getInstance();
                 $t_login = $Twitter->setUser('arglazer','trhv1dkzr');
                 if (true === $t_login){
@@ -79,7 +79,7 @@ class PostsController extends AbstractSubController{
                     );
                     if (true === $res) $this->redirect('posts/open/'.$post->getName());
                     else echo $res;
-                }else echo $t_login;
+                }else echo $t_login;*/
             }
         }else $this->folder .='/list';
         
